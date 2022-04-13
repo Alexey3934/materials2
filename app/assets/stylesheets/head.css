@@ -1,0 +1,21 @@
+.top_and_bottom {
+    background-color: coral;
+    display: flex;
+    justify-content: space-between;
+}
+#logo {font-size: 3vw;}
+#right { 
+    text-align: right;
+}
+input {
+    text-align: center;
+}
+#content {
+    display: flex;
+    margin: 1vw;
+    justify-content: space-around
+}
+
+#content p {
+    font-size: 4vw;
+}
