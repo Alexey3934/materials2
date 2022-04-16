@@ -1,0 +1,102 @@
+
+
+
+<div class='top_and_bottom'>
+    
+    <div id='left'>
+        <h1>ЦеноСтрой</h1>
+        <p>Лучшие цены на</p>
+        <p>стройматериалы</p>
+    </div>
+
+    <div id='right'>
+        <p>ВХОД/РЕГИСТРАЦИЯ</p>
+        <p>Добавить товар</p>
+    </div>
+
+</div>
+<input value="поиск" size='50'>
+
+
+
+
+
+
+<div id="wrap1">    
+    <div id="categories_root" class='flex content1'>
+
+        <ul>
+        <% @column1.each do |category| %>
+                <li>
+            <%= category.name %>
+                </li>
+            <% end %>
+        </ul>
+
+        <ul>
+        <% @column2.each do |category| %>
+                <li>
+            <%= category.name %>
+                </li>
+            <% end %>
+        </ul>
+
+        <ul>
+        <% @column3.each do |category| %>
+                <li>
+            <%= category.name %>
+                </li>
+            <% end %>
+        </ul>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class='top_and_bottom flex'>
+    <div> 
+        <p>орагнизация 1</p>
+        <p>орагнизация 2</p>
+    </div>
+    <div> 
+        <p>орагнизация 3</p>
+        <p>орагнизация 4</p>
+    </div>
+    <div> 
+        <p>орагнизация 5</p>
+        <p>орагнизация 6</p>
+    </div>
+    <div> 
+        <p>орагнизация 7</p>
+        <p>орагнизация 8</p>
+    </div>
+</div>
+
+ 
+
+
+
+<script>
+    const cat_s     = document.querySelector("#categories_root")
+
+cat_s.addEventListener('click', el => {
+    let target = el.target.innerHTML
+    
+    if (target.length < 100) {
+        target = target.replace(/\s+/g, '');
+        window.location.href = `/${String(target)}`
+    }
+
+} )
+
+</script>

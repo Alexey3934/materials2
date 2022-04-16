@@ -1,0 +1,31 @@
+.flex {display: flex;}
+
+.top_and_bottom {
+    background-color: coral;
+    justify-content: space-between;
+}
+#logo {font-size: 3vw;}
+#right { 
+    text-align: right;
+}
+input {
+    text-align: center;
+}
+.content1 {
+    display: flex;
+    margin: 1vw;
+    justify-content: space-around
+}
+
+.content1 li {
+    font-size: 4vw;
+}
+
+#wrap1 {
+    display: block;
+}
+
+
+#leve1 {margin-left: 2vw;}
+#leve2 {margin-left: 4vw;}
+li {margin: 1vw;}
