@@ -1,0 +1,50 @@
+<%= render "top" %>
+
+<div style="border: solid" id="to_root">кнопка перехода на первый фрейм</div>
+
+
+
+
+
+<div id="leve1">
+    <%= @subcategory1_name %>
+</div>
+
+<div class="leve2">
+    <%= @subcategory2_name %>
+</div>
+
+<div class="leve3 bold">
+    <%= @subcategory3_name %>
+</div>
+
+
+
+
+
+
+
+
+
+
+<%= render "bottom" %>
+
+
+
+
+<script>
+    const to_root   = document.querySelector("#to_root")
+    to_root.addEventListener('click', () => window.location.href = '/')
+
+    const level1_name = document.querySelector("#leve1").innerHTML.replace(/\s+/g, '')
+
+
+    const level1      = document.querySelector("#leve1")
+    const level2_name = document.querySelector(".leve2").innerHTML.replace(/\s+/g, '')
+    const level2      = document.querySelector(".leve2")
+
+    level1.addEventListener('click', ()=> window.location.href =  `/${level1_name}`)
+    level2.addEventListener('click', ()=> window.location.href =  `/${level1_name}/${level2_name}`)
+
+
+</script>

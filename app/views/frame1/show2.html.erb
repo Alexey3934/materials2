@@ -1,19 +1,4 @@
-
-<div class='top_and_bottom'>
-    
-<div id='left'>
-    <h1>ЦеноСтрой</h1>
-    <p>Лучшие цены на</p>
-    <p>стройматериалы</p>
-</div>
-
-<div id='right'>
-    <p>ВХОД/РЕГИСТРАЦИЯ</p>
-    <p>Добавить товар</p>
-</div>
-
-</div>
-<input value="поиск" size='50'>
+<%= render "top" %>
 
 
 
@@ -23,18 +8,16 @@
 
 
 
+<div style="border: solid" id="to_root">кнопка перехода на первый фрейм</div>
 
-
-<div style="border: solid" id="to_root">на первый фрейм</div>
-
-<div id="leve1">
-<%= @current_category_L1 %>
+<div id="leve1" class="bold">
+    <%= @active_category1_name %>
 </div>
 
 
 
 
-<div id="leve2">
+<div class="leve2">
     <ul>
 
 
@@ -47,10 +30,6 @@
 
 
     </ul>
-
-    <p>
-    <%= @test%>
-    </p>
 </div>
 
 
@@ -61,40 +40,31 @@
 
 
 
-
-
-
-
-
-
-
-
-<div class='top_and_bottom flex'>
-    <div> 
-        <p>орагнизация 1</p>
-        <p>орагнизация 2</p>
-    </div>
-    <div> 
-        <p>орагнизация 3</p>
-        <p>орагнизация 4</p>
-    </div>
-    <div> 
-        <p>орагнизация 5</p>
-        <p>орагнизация 6</p>
-    </div>
-    <div> 
-        <p>орагнизация 7</p>
-        <p>орагнизация 8</p>
-    </div>
-</div>
+<%= render "bottom" %>
 
  
 
 
+
+
+
+
 <script>
     const to_root   = document.querySelector("#to_root")
-
     to_root.addEventListener('click', () => window.location.href = '/')
 
-    console.log(to_root)
+
+
+    const leve1 = document.querySelector("#leve1").innerHTML.replace(/\s+/g, '')
+    const leve2 = document.querySelector(".leve2")
+    leve2.addEventListener('click', el => {
+        let target = el.target.innerHTML
+
+        if (target.length < 100) {
+            target = target.replace(/\s+/g, '');
+            window.location.href = `/${leve1}/${target}`
+        }
+    } )
+
+
 </script>
