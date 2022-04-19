@@ -43,6 +43,13 @@ table {
     height: 3vw;
 }
 
-.td {border: gray solid thin;}
+.td {border: rgb(20, 17, 17) solid thin;
+    background-color: rgb(250, 215, 212);
+}
+
+.td_top {
+    background-color: rgb(91, 139, 102);
+    border: rgb(20, 17, 17) solid thin;
+}
 
   

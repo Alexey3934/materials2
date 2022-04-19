@@ -1,38 +1,63 @@
 <%= render "top" %>
 
-<div style="border: solid" id="to_root">кнопка перехода на первый фрейм</div>
-<div id="leve1">
-    <%= @current_category_L1 %>
+
+<div class='flex'>
+
+
+    <div>
+        <div style="border: solid" id="to_root">кнопка перехода на первый фрейм</div>
+        <div id="leve1">
+            <%= @current_category_L1 %>
+        </div>
+
+        <div class="leve2 bold">
+            <%= @current_category_L2 %>
+        </div>
+
+
+
+
+
+        <div class="leve3">
+            <ul>
+
+
+
+                    <% @categories_L3.each do |el| %>
+                <li>
+                    <%= el.name %>
+                </li>
+                    <% end %>
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <table id='table'>
+        <tr class="bold">
+            <td class="td_top">название</td> 
+            <td class="td_top">ед.изм.</td>
+            <td class="td_top">цена розн.</td>
+            <td class="td_top">цена опт.</td>
+            <td class="td_top">объём опта</td>
+            <td class="td_top">компания</td>
+            <td class="td_top">тел для заказа</td>
+        </tr>
+    </table>
+
+
 </div>
-
-<div class="leve2 bold">
-    <%= @current_category_L2 %>
-</div>
-
-
-
-
-
-<div class="leve3">
-    <ul>
-
-
-
-            <% @categories_L3.each do |el| %>
-        <li>
-            <%= el.name %>
-        </li>
-            <% end %>
-
-
-
-
-    </ul>
-</div>
-
-
-
-
 
 
 <%= render "bottom" %>

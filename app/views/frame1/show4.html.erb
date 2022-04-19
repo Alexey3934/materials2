@@ -1,28 +1,52 @@
 <%= render "top" %>
 
-<div style="border: solid" id="to_root">кнопка перехода на первый фрейм</div>
+ 
+ <div class='flex'>
+
+    <div>    
+        <div style="border: solid" id="to_root">кнопка перехода на первый фрейм</div>
 
 
 
 
 
-<div id="leve1">
-    <%= @subcategory1_name %>
+        <div id="leve1">
+            <%= @subcategory1_name %>
+        </div>
+
+        <div class="leve2">
+            <%= @subcategory2_name %>
+        </div>
+
+        <div class="leve3 bold">
+            <%= @subcategory3_name %>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <table id='table'>
+        <tr class="bold">
+            <td class="td_top">название</td> 
+            <td class="td_top">ед.изм.</td>
+            <td class="td_top">цена розн.</td>
+            <td class="td_top">цена опт.</td>
+            <td class="td_top">объём опта</td>
+            <td class="td_top">компания</td>
+            <td class="td_top">тел для заказа</td>
+        </tr>
+    </table>
+
+
 </div>
-
-<div class="leve2">
-    <%= @subcategory2_name %>
-</div>
-
-<div class="leve3 bold">
-    <%= @subcategory3_name %>
-</div>
-
-
-
-
-
-
 
 
 

@@ -8,6 +8,7 @@
 
 
 <div class='flex'>
+
     <div>    
         <div style="border: solid" id="to_root">кнопка перехода на первый фрейм</div>
 
@@ -26,44 +27,23 @@
         </div>
     </div>
 
+
+
+
     <table id='table'>
         <tr class="bold">
-            <td class='td'>название</td> 
-            <td class='td'>ед.изм.</td>
-            <td class='td'>цена розн.</td>
-            <td class='td'>цена опт.</td>
-            <td class='td'>объём опта</td>
-            <td class='td'>компания</td>
-            <td class='td'>тел для заказа</td>
+            <td class="td_top">название</td> 
+            <td class="td_top">ед.изм.</td>
+            <td class="td_top">цена розн.</td>
+            <td class="td_top">цена опт.</td>
+            <td class="td_top">объём опта</td>
+            <td class="td_top">компания</td>
+            <td class="td_top">тел для заказа</td>
         </tr>
-        <%# <tr>
-            <td>название1</td> 
-            <td>шт</td>
-            <td>1000</td>
-            <td>800</td>
-            <td>50</td>
-            <td>стойстой</td>
-            <td>89991111111</td>
-        </tr> %>
-        <%# <tr>
-            <td><div id='description'></div></td> 
-            <td>шт</td>
-            <td>1100</td>
-            <td>900</td>
-            <td>80</td>
-            <td>стойстой</td>
-            <td>89991111111</td>
-        </tr> %>
     </table>
 
 
 </div>
-
-
-
-
-
-
 
 
 <%= render "bottom" %>
@@ -88,52 +68,4 @@
             window.location.href = `/qqq/${leve1}/${target}`
         }
     } )
-
-
-
-    async function fn() {
-        const response = await fetch('/qqq');
-        const data     = await response.json()  
-
-
-
-        const addTdEl = () => {
-            const el = document.createElement("td")
-            el.classList.add("td")
-            return el
-        }
-
-
-
-
-
-        for (row of data) {
-            const table = document.querySelector('#table')
-            const trEl = document.createElement('tr')
-            const hrEl = document.createElement('hr')
-
-            trEl.append( addTdEl().textContent = row.description)
-            trEl.append(hrEl)
-            trEl.append( addTdEl().textContent = row.unit)
-            trEl.append( addTdEl().textContent = row.price_retail)
-            trEl.append( addTdEl().textContent = row.price_wholesale)
-            trEl.append( addTdEl().textContent = row.amount_wholesale)
-            trEl.append( addTdEl().textContent = row.company)
-            trEl.append( addTdEl().textContent = '89891112233')
-            
-            table.append(trEl)
-
-        }
-    
-    
-    
-    }
-    fn()
-    
-
-        const tdElements = document.querySelectorAll("td")
-        console.log(tdElements.length);
-        for (const td of tdElements) {
-            td.classList.add("td")
-        }
 </script>
