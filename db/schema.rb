@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_15_172238) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_19_131658) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "parent_id"
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.string "description"
+    t.string "unit"
+    t.integer "price_retail"
+    t.integer "price_wholesale"
+    t.integer "amount_wholesale"
+    t.string "category"
+    t.string "place"
+    t.string "company"
+    t.integer "days_left"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

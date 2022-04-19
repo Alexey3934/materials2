@@ -30,6 +30,38 @@ class Frame1Controller < ApplicationController
             #     i = i + 1
             # end
 
+# # наполнение таблицы materials
+#             description = 'описание'
+#             unit = 'кв.м'
+#             price_retail = 10000
+#             price_wholesale = 8000
+#             amount_wholesale = 50
+#             category = 'категория'
+#             place = 'регион'
+#             days_left = 0
+#             company = 'компания'
+
+#             i = 0
+
+#             40.times do
+
+#                 Material.create(
+#                     description:description+i.to_s,
+#                     unit:unit,
+#                     price_retail:price_retail+i,
+#                     price_wholesale:price_wholesale+i,
+#                     amount_wholesale:amount_wholesale+i,
+#                     category:category+i.to_s,
+#                     place:place+i.to_s,
+#                     days_left:days_left+i,
+#                     company:company+i.to_s
+#                 )
+#                 i = i + 1
+#             end
+
+
+
+
 
 
             categories = Category.where(parent_id: nil).order(:name)
@@ -85,10 +117,12 @@ class Frame1Controller < ApplicationController
     end
 
     def qqq
-        @results = Category.all
-        render json: @results
+        @materials = Material.all
+        render json: @materials
 
     end
 
 
 end
+
+

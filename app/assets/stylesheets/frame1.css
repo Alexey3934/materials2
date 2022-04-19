@@ -43,5 +43,6 @@ table {
     height: 3vw;
 }
 
-td {border: gray solid thin;}
+.td {border: gray solid thin;}
+
   

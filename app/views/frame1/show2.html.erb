@@ -26,17 +26,17 @@
         </div>
     </div>
 
-    <table>
-        <tr>
-            <td>название</td> 
-            <td>ед.изм.</td>
-            <td>цена розн.</td>
-            <td>цена опт.</td>
-            <td>объём опта</td>
-            <td>компания</td>
-            <td>тел для заказа</td>
+    <table id='table'>
+        <tr class="bold">
+            <td class='td'>название</td> 
+            <td class='td'>ед.изм.</td>
+            <td class='td'>цена розн.</td>
+            <td class='td'>цена опт.</td>
+            <td class='td'>объём опта</td>
+            <td class='td'>компания</td>
+            <td class='td'>тел для заказа</td>
         </tr>
-        <tr>
+        <%# <tr>
             <td>название1</td> 
             <td>шт</td>
             <td>1000</td>
@@ -44,16 +44,16 @@
             <td>50</td>
             <td>стойстой</td>
             <td>89991111111</td>
-        </tr>
-        <tr>
-            <td>название2</td> 
+        </tr> %>
+        <%# <tr>
+            <td><div id='description'></div></td> 
             <td>шт</td>
             <td>1100</td>
             <td>900</td>
             <td>80</td>
             <td>стойстой</td>
             <td>89991111111</td>
-        </tr>
+        </tr> %>
     </table>
 
 
@@ -79,13 +79,10 @@
     const to_root   = document.querySelector("#to_root")
     to_root.addEventListener('click', () => window.location.href = '/')
 
-
-
     const leve1 = document.querySelector("#leve1").innerHTML.replace(/\s+/g, '')
     const leve2 = document.querySelector(".leve2")
     leve2.addEventListener('click', el => {
         let target = el.target.innerHTML
-
         if (target.length < 100) {
             target = target.replace(/\s+/g, '');
             window.location.href = `/qqq/${leve1}/${target}`
@@ -95,14 +92,48 @@
 
 
     async function fn() {
-      let response = await fetch('/qqq');
-      let data =     await response.json()  
+        const response = await fetch('/qqq');
+        const data     = await response.json()  
 
 
-console.log(data)
+
+        const addTdEl = () => {
+            const el = document.createElement("td")
+            el.classList.add("td")
+            return el
+        }
 
 
+
+
+
+        for (row of data) {
+            const table = document.querySelector('#table')
+            const trEl = document.createElement('tr')
+            const hrEl = document.createElement('hr')
+
+            trEl.append( addTdEl().textContent = row.description)
+            trEl.append(hrEl)
+            trEl.append( addTdEl().textContent = row.unit)
+            trEl.append( addTdEl().textContent = row.price_retail)
+            trEl.append( addTdEl().textContent = row.price_wholesale)
+            trEl.append( addTdEl().textContent = row.amount_wholesale)
+            trEl.append( addTdEl().textContent = row.company)
+            trEl.append( addTdEl().textContent = '89891112233')
+            
+            table.append(trEl)
+
+        }
+    
+    
+    
     }
     fn()
-  
+    
+
+        const tdElements = document.querySelectorAll("td")
+        console.log(tdElements.length);
+        for (const td of tdElements) {
+            td.classList.add("td")
+        }
 </script>

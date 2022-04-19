@@ -42522,3 +42522,2273 @@ Processing by Frame1Controller#qqq as */*
 Completed 200 OK in 132ms (Views: 123.3ms | ActiveRecord: 8.0ms | Allocations: 26196)
 
 
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMaterials (20220419131658)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "materials" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "unit" varchar, "price_retail" integer, "price_wholesale" integer, "amount_wholesale" integer, "category" varchar, "place" varchar, "company" varchar, "days_left" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220419131658"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-04-19 15:29:03 +0200
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Frame1Controller#show1 as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 2236)
+
+
+  
+TypeError (String can't be coerced into Integer):
+  
+app/controllers/frame1_controller.rb:58:in `+'
+app/controllers/frame1_controller.rb:58:in `block in show1'
+app/controllers/frame1_controller.rb:47:in `times'
+app/controllers/frame1_controller.rb:47:in `show1'
+Started GET "/" for ::1 at 2022-04-19 15:30:04 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/frame1_controller.rb:49:in `block in show1'
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 8.6ms | Allocations: 9257)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'date_start' for Material.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/frame1_controller.rb:49:in `block in show1'
+app/controllers/frame1_controller.rb:47:in `times'
+app/controllers/frame1_controller.rb:47:in `show1'
+Started GET "/" for ::1 at 2022-04-19 15:31:02 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.9ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание0"], ["unit", "кв.м"], ["price_retail", 10000], ["price_wholesale", 8000], ["amount_wholesale", 50], ["category", "категория0"], ["place", "регион0"], ["company", "компания0"], ["days_left", 0], ["created_at", "2022-04-19 13:31:02.642381"], ["updated_at", "2022-04-19 13:31:02.642381"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.0ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание1"], ["unit", "кв.м"], ["price_retail", 10001], ["price_wholesale", 8001], ["amount_wholesale", 51], ["category", "категория1"], ["place", "регион1"], ["company", "компания1"], ["days_left", 1], ["created_at", "2022-04-19 13:31:02.667362"], ["updated_at", "2022-04-19 13:31:02.667362"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.4ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание2"], ["unit", "кв.м"], ["price_retail", 10002], ["price_wholesale", 8002], ["amount_wholesale", 52], ["category", "категория2"], ["place", "регион2"], ["company", "компания2"], ["days_left", 2], ["created_at", "2022-04-19 13:31:02.697577"], ["updated_at", "2022-04-19 13:31:02.697577"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.0ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание3"], ["unit", "кв.м"], ["price_retail", 10003], ["price_wholesale", 8003], ["amount_wholesale", 53], ["category", "категория3"], ["place", "регион3"], ["company", "компания3"], ["days_left", 3], ["created_at", "2022-04-19 13:31:02.727647"], ["updated_at", "2022-04-19 13:31:02.727647"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.3ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание4"], ["unit", "кв.м"], ["price_retail", 10004], ["price_wholesale", 8004], ["amount_wholesale", 54], ["category", "категория4"], ["place", "регион4"], ["company", "компания4"], ["days_left", 4], ["created_at", "2022-04-19 13:31:02.752440"], ["updated_at", "2022-04-19 13:31:02.752440"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.3ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание5"], ["unit", "кв.м"], ["price_retail", 10005], ["price_wholesale", 8005], ["amount_wholesale", 55], ["category", "категория5"], ["place", "регион5"], ["company", "компания5"], ["days_left", 5], ["created_at", "2022-04-19 13:31:02.777363"], ["updated_at", "2022-04-19 13:31:02.777363"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.8ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание6"], ["unit", "кв.м"], ["price_retail", 10006], ["price_wholesale", 8006], ["amount_wholesale", 56], ["category", "категория6"], ["place", "регион6"], ["company", "компания6"], ["days_left", 6], ["created_at", "2022-04-19 13:31:02.801814"], ["updated_at", "2022-04-19 13:31:02.801814"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.8ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание7"], ["unit", "кв.м"], ["price_retail", 10007], ["price_wholesale", 8007], ["amount_wholesale", 57], ["category", "категория7"], ["place", "регион7"], ["company", "компания7"], ["days_left", 7], ["created_at", "2022-04-19 13:31:02.823669"], ["updated_at", "2022-04-19 13:31:02.823669"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.7ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание8"], ["unit", "кв.м"], ["price_retail", 10008], ["price_wholesale", 8008], ["amount_wholesale", 58], ["category", "категория8"], ["place", "регион8"], ["company", "компания8"], ["days_left", 8], ["created_at", "2022-04-19 13:31:02.845576"], ["updated_at", "2022-04-19 13:31:02.845576"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.7ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание9"], ["unit", "кв.м"], ["price_retail", 10009], ["price_wholesale", 8009], ["amount_wholesale", 59], ["category", "категория9"], ["place", "регион9"], ["company", "компания9"], ["days_left", 9], ["created_at", "2022-04-19 13:31:02.872330"], ["updated_at", "2022-04-19 13:31:02.872330"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.7ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание10"], ["unit", "кв.м"], ["price_retail", 10010], ["price_wholesale", 8010], ["amount_wholesale", 60], ["category", "категория10"], ["place", "регион10"], ["company", "компания10"], ["days_left", 10], ["created_at", "2022-04-19 13:31:02.895624"], ["updated_at", "2022-04-19 13:31:02.895624"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.4ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание11"], ["unit", "кв.м"], ["price_retail", 10011], ["price_wholesale", 8011], ["amount_wholesale", 61], ["category", "категория11"], ["place", "регион11"], ["company", "компания11"], ["days_left", 11], ["created_at", "2022-04-19 13:31:02.920355"], ["updated_at", "2022-04-19 13:31:02.920355"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.7ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание12"], ["unit", "кв.м"], ["price_retail", 10012], ["price_wholesale", 8012], ["amount_wholesale", 62], ["category", "категория12"], ["place", "регион12"], ["company", "компания12"], ["days_left", 12], ["created_at", "2022-04-19 13:31:02.941855"], ["updated_at", "2022-04-19 13:31:02.941855"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.8ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание13"], ["unit", "кв.м"], ["price_retail", 10013], ["price_wholesale", 8013], ["amount_wholesale", 63], ["category", "категория13"], ["place", "регион13"], ["company", "компания13"], ["days_left", 13], ["created_at", "2022-04-19 13:31:02.964802"], ["updated_at", "2022-04-19 13:31:02.964802"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.6ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание14"], ["unit", "кв.м"], ["price_retail", 10014], ["price_wholesale", 8014], ["amount_wholesale", 64], ["category", "категория14"], ["place", "регион14"], ["company", "компания14"], ["days_left", 14], ["created_at", "2022-04-19 13:31:02.989724"], ["updated_at", "2022-04-19 13:31:02.989724"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (3.1ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание15"], ["unit", "кв.м"], ["price_retail", 10015], ["price_wholesale", 8015], ["amount_wholesale", 65], ["category", "категория15"], ["place", "регион15"], ["company", "компания15"], ["days_left", 15], ["created_at", "2022-04-19 13:31:03.010632"], ["updated_at", "2022-04-19 13:31:03.010632"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.9ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание16"], ["unit", "кв.м"], ["price_retail", 10016], ["price_wholesale", 8016], ["amount_wholesale", 66], ["category", "категория16"], ["place", "регион16"], ["company", "компания16"], ["days_left", 16], ["created_at", "2022-04-19 13:31:03.032685"], ["updated_at", "2022-04-19 13:31:03.032685"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.0ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание17"], ["unit", "кв.м"], ["price_retail", 10017], ["price_wholesale", 8017], ["amount_wholesale", 67], ["category", "категория17"], ["place", "регион17"], ["company", "компания17"], ["days_left", 17], ["created_at", "2022-04-19 13:31:03.052618"], ["updated_at", "2022-04-19 13:31:03.052618"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.7ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание18"], ["unit", "кв.м"], ["price_retail", 10018], ["price_wholesale", 8018], ["amount_wholesale", 68], ["category", "категория18"], ["place", "регион18"], ["company", "компания18"], ["days_left", 18], ["created_at", "2022-04-19 13:31:03.069994"], ["updated_at", "2022-04-19 13:31:03.069994"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.7ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание19"], ["unit", "кв.м"], ["price_retail", 10019], ["price_wholesale", 8019], ["amount_wholesale", 69], ["category", "категория19"], ["place", "регион19"], ["company", "компания19"], ["days_left", 19], ["created_at", "2022-04-19 13:31:03.083661"], ["updated_at", "2022-04-19 13:31:03.083661"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.7ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание20"], ["unit", "кв.м"], ["price_retail", 10020], ["price_wholesale", 8020], ["amount_wholesale", 70], ["category", "категория20"], ["place", "регион20"], ["company", "компания20"], ["days_left", 20], ["created_at", "2022-04-19 13:31:03.102343"], ["updated_at", "2022-04-19 13:31:03.102343"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.6ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание21"], ["unit", "кв.м"], ["price_retail", 10021], ["price_wholesale", 8021], ["amount_wholesale", 71], ["category", "категория21"], ["place", "регион21"], ["company", "компания21"], ["days_left", 21], ["created_at", "2022-04-19 13:31:03.120942"], ["updated_at", "2022-04-19 13:31:03.120942"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.9ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание22"], ["unit", "кв.м"], ["price_retail", 10022], ["price_wholesale", 8022], ["amount_wholesale", 72], ["category", "категория22"], ["place", "регион22"], ["company", "компания22"], ["days_left", 22], ["created_at", "2022-04-19 13:31:03.137416"], ["updated_at", "2022-04-19 13:31:03.137416"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.8ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание23"], ["unit", "кв.м"], ["price_retail", 10023], ["price_wholesale", 8023], ["amount_wholesale", 73], ["category", "категория23"], ["place", "регион23"], ["company", "компания23"], ["days_left", 23], ["created_at", "2022-04-19 13:31:03.156554"], ["updated_at", "2022-04-19 13:31:03.156554"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.7ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание24"], ["unit", "кв.м"], ["price_retail", 10024], ["price_wholesale", 8024], ["amount_wholesale", 74], ["category", "категория24"], ["place", "регион24"], ["company", "компания24"], ["days_left", 24], ["created_at", "2022-04-19 13:31:03.170600"], ["updated_at", "2022-04-19 13:31:03.170600"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.7ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание25"], ["unit", "кв.м"], ["price_retail", 10025], ["price_wholesale", 8025], ["amount_wholesale", 75], ["category", "категория25"], ["place", "регион25"], ["company", "компания25"], ["days_left", 25], ["created_at", "2022-04-19 13:31:03.186170"], ["updated_at", "2022-04-19 13:31:03.186170"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.9ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание26"], ["unit", "кв.м"], ["price_retail", 10026], ["price_wholesale", 8026], ["amount_wholesale", 76], ["category", "категория26"], ["place", "регион26"], ["company", "компания26"], ["days_left", 26], ["created_at", "2022-04-19 13:31:03.203334"], ["updated_at", "2022-04-19 13:31:03.203334"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.6ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание27"], ["unit", "кв.м"], ["price_retail", 10027], ["price_wholesale", 8027], ["amount_wholesale", 77], ["category", "категория27"], ["place", "регион27"], ["company", "компания27"], ["days_left", 27], ["created_at", "2022-04-19 13:31:03.220920"], ["updated_at", "2022-04-19 13:31:03.220920"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.6ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание28"], ["unit", "кв.м"], ["price_retail", 10028], ["price_wholesale", 8028], ["amount_wholesale", 78], ["category", "категория28"], ["place", "регион28"], ["company", "компания28"], ["days_left", 28], ["created_at", "2022-04-19 13:31:03.236283"], ["updated_at", "2022-04-19 13:31:03.236283"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.6ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание29"], ["unit", "кв.м"], ["price_retail", 10029], ["price_wholesale", 8029], ["amount_wholesale", 79], ["category", "категория29"], ["place", "регион29"], ["company", "компания29"], ["days_left", 29], ["created_at", "2022-04-19 13:31:03.252322"], ["updated_at", "2022-04-19 13:31:03.252322"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (2.4ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание30"], ["unit", "кв.м"], ["price_retail", 10030], ["price_wholesale", 8030], ["amount_wholesale", 80], ["category", "категория30"], ["place", "регион30"], ["company", "компания30"], ["days_left", 30], ["created_at", "2022-04-19 13:31:03.276719"], ["updated_at", "2022-04-19 13:31:03.276719"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.9ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание31"], ["unit", "кв.м"], ["price_retail", 10031], ["price_wholesale", 8031], ["amount_wholesale", 81], ["category", "категория31"], ["place", "регион31"], ["company", "компания31"], ["days_left", 31], ["created_at", "2022-04-19 13:31:03.299519"], ["updated_at", "2022-04-19 13:31:03.299519"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.6ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание32"], ["unit", "кв.м"], ["price_retail", 10032], ["price_wholesale", 8032], ["amount_wholesale", 82], ["category", "категория32"], ["place", "регион32"], ["company", "компания32"], ["days_left", 32], ["created_at", "2022-04-19 13:31:03.320501"], ["updated_at", "2022-04-19 13:31:03.320501"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.2ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание33"], ["unit", "кв.м"], ["price_retail", 10033], ["price_wholesale", 8033], ["amount_wholesale", 83], ["category", "категория33"], ["place", "регион33"], ["company", "компания33"], ["days_left", 33], ["created_at", "2022-04-19 13:31:03.333266"], ["updated_at", "2022-04-19 13:31:03.333266"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.8ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание34"], ["unit", "кв.м"], ["price_retail", 10034], ["price_wholesale", 8034], ["amount_wholesale", 84], ["category", "категория34"], ["place", "регион34"], ["company", "компания34"], ["days_left", 34], ["created_at", "2022-04-19 13:31:03.348660"], ["updated_at", "2022-04-19 13:31:03.348660"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.9ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание35"], ["unit", "кв.м"], ["price_retail", 10035], ["price_wholesale", 8035], ["amount_wholesale", 85], ["category", "категория35"], ["place", "регион35"], ["company", "компания35"], ["days_left", 35], ["created_at", "2022-04-19 13:31:03.379354"], ["updated_at", "2022-04-19 13:31:03.379354"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (1.1ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание36"], ["unit", "кв.м"], ["price_retail", 10036], ["price_wholesale", 8036], ["amount_wholesale", 86], ["category", "категория36"], ["place", "регион36"], ["company", "компания36"], ["days_left", 36], ["created_at", "2022-04-19 13:31:03.395823"], ["updated_at", "2022-04-19 13:31:03.395823"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.9ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание37"], ["unit", "кв.м"], ["price_retail", 10037], ["price_wholesale", 8037], ["amount_wholesale", 87], ["category", "категория37"], ["place", "регион37"], ["company", "компания37"], ["days_left", 37], ["created_at", "2022-04-19 13:31:03.412937"], ["updated_at", "2022-04-19 13:31:03.412937"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.7ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание38"], ["unit", "кв.м"], ["price_retail", 10038], ["price_wholesale", 8038], ["amount_wholesale", 88], ["category", "категория38"], ["place", "регион38"], ["company", "компания38"], ["days_left", 38], ["created_at", "2022-04-19 13:31:03.429189"], ["updated_at", "2022-04-19 13:31:03.429189"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mMaterial Create (0.6ms)[0m  [1m[32mINSERT INTO "materials" ("description", "unit", "price_retail", "price_wholesale", "amount_wholesale", "category", "place", "company", "days_left", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["description", "описание39"], ["unit", "кв.м"], ["price_retail", 10039], ["price_wholesale", 8039], ["amount_wholesale", 89], ["category", "категория39"], ["place", "регион39"], ["company", "компания39"], ["days_left", 39], ["created_at", "2022-04-19 13:31:03.443290"], ["updated_at", "2022-04-19 13:31:03.443290"]]
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/frame1_controller.rb:48:in `block in show1'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL ORDER BY "categories"."name" ASC[0m
+  ↳ app/controllers/frame1_controller.rb:71:in `each_with_index'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show1.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 3.2ms | Allocations: 158)
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 133)
+  Rendered frame1/show1.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1178)
+  Rendered layout layouts/application.html.erb (Duration: 284.0ms | Allocations: 45716)
+Completed 200 OK in 1175ms (Views: 289.5ms | ActiveRecord: 243.4ms | Allocations: 131673)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 15:31:53 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.1ms | Allocations: 154)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2881)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 2975)
+Completed 500 Internal Server Error in 14ms (Allocations: 3766)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;                 @categories_L2.each do |item| 
+                                        ^^^^^):
+    17: 
+    18:         <div class="leve2">
+    19:             <ul>
+    20:                 <% @categories_L2.each do |item| %>
+    21:                  <li>
+    22:                      <%= item.name %>
+    23:                  </li>
+  
+app/views/frame1/show2.html.erb:20
+Started GET "/" for ::1 at 2022-04-19 15:32:04 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/frame1_controller.rb:67:in `show1'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL ORDER BY "categories"."name" ASC[0m
+  ↳ app/controllers/frame1_controller.rb:71:in `each_with_index'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show1.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered frame1/_bottom.html.erb (Duration: 4.8ms | Allocations: 132)
+  Rendered frame1/show1.html.erb within layouts/application (Duration: 14.0ms | Allocations: 964)
+  Rendered layout layouts/application.html.erb (Duration: 62.4ms | Allocations: 14776)
+Completed 200 OK in 101ms (Views: 66.7ms | ActiveRecord: 4.3ms | Allocations: 18976)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:32:06 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 9.9ms | Allocations: 777)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 3028)
+Completed 200 OK in 43ms (Views: 31.1ms | ActiveRecord: 0.9ms | Allocations: 4814)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:32:07 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (6.0ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 94ms (Views: 80.5ms | ActiveRecord: 7.7ms | Allocations: 10928)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:33:07 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.1ms | Allocations: 154)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.3ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 16.4ms | Allocations: 1636)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 4332)
+Completed 200 OK in 40ms (Views: 33.6ms | ActiveRecord: 1.1ms | Allocations: 5741)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:33:07 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.8ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:33:36 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 2.1ms | Allocations: 154)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 2.6ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 18.6ms | Allocations: 1637)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 4334)
+Completed 200 OK in 47ms (Views: 37.6ms | ActiveRecord: 1.2ms | Allocations: 5730)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:33:37 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.6ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 78ms (Views: 76.5ms | ActiveRecord: 0.6ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:40:08 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 2.5ms | Allocations: 154)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.4ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 15.5ms | Allocations: 1659)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 4382)
+Completed 200 OK in 49ms (Views: 33.3ms | ActiveRecord: 1.8ms | Allocations: 6320)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:40:08 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (3.1ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 56ms (Views: 51.8ms | ActiveRecord: 3.1ms | Allocations: 7539)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:41:08 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.5ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.4ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.7ms | Allocations: 1653)
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 4334)
+Completed 200 OK in 39ms (Views: 32.1ms | ActiveRecord: 0.8ms | Allocations: 5710)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:41:09 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.7ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:41:21 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.1ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.5ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1653)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 4343)
+Completed 200 OK in 37ms (Views: 28.6ms | ActiveRecord: 0.7ms | Allocations: 5717)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:41:21 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.6ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.6ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:43:10 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.1ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 16.5ms | Allocations: 1656)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 4368)
+Completed 200 OK in 43ms (Views: 36.2ms | ActiveRecord: 0.8ms | Allocations: 5745)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:43:10 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 55ms (Views: 52.9ms | ActiveRecord: 0.7ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:43:34 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 2.0ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.3ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 12.7ms | Allocations: 1654)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 4362)
+Completed 200 OK in 45ms (Views: 35.6ms | ActiveRecord: 0.7ms | Allocations: 5739)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:43:34 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.5ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 51ms (Views: 47.7ms | ActiveRecord: 0.5ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:44:02 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.2ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1653)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 4361)
+Completed 200 OK in 36ms (Views: 30.1ms | ActiveRecord: 0.8ms | Allocations: 5737)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:44:02 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.0ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 1.0ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:44:18 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.9ms | Allocations: 154)
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 17.1ms | Allocations: 1653)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 4358)
+Completed 200 OK in 45ms (Views: 32.2ms | ActiveRecord: 2.6ms | Allocations: 5732)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:44:18 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.7ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F2%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:44:27 +0200
+Processing by Frame1Controller#show3 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10", "subcategory2"=>"Категория2уровня10"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:100:in `show3'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория2уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:103:in `show3'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show3.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = ?[0m  [["parent_id", 162]]
+  ↳ app/views/frame1/show3.html.erb:21
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show3.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 3389)
+Completed 200 OK in 38ms (Views: 22.1ms | ActiveRecord: 1.7ms | Allocations: 4781)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:44:29 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 16)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 5.6ms | Allocations: 759)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 3021)
+Completed 200 OK in 26ms (Views: 18.1ms | ActiveRecord: 0.8ms | Allocations: 3809)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:44:29 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.8ms | Allocations: 7454)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMaterial Load (1.2ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:47:21 +0200
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.2ms | Allocations: 166)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3523)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 3636)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms | Allocations: 6049)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;                 @categories_L2.each do |item| 
+                                        ^^^^^):
+    17: 
+    18:         <div class="leve2">
+    19:             <ul>
+    20:                 <% @categories_L2.each do |item| %>
+    21:                  <li>
+    22:                      <%= item.name %>
+    23:                  </li>
+  
+app/views/frame1/show2.html.erb:20
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 15:47:29 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.3ms | Allocations: 16)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.2ms | Allocations: 2244)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 2333)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 2616)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;                 @categories_L2.each do |item| 
+                                        ^^^^^):
+    17: 
+    18:         <div class="leve2">
+    19:             <ul>
+    20:                 <% @categories_L2.each do |item| %>
+    21:                  <li>
+    22:                      <%= item.name %>
+    23:                  </li>
+  
+app/views/frame1/show2.html.erb:20
+Started GET "/" for ::1 at 2022-04-19 15:48:13 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL ORDER BY "categories"."name" ASC[0m
+  ↳ app/controllers/frame1_controller.rb:71:in `each_with_index'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show1.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered frame1/_bottom.html.erb (Duration: 1.7ms | Allocations: 133)
+  Rendered frame1/show1.html.erb within layouts/application (Duration: 12.0ms | Allocations: 969)
+  Rendered layout layouts/application.html.erb (Duration: 201.1ms | Allocations: 35052)
+Completed 200 OK in 269ms (Views: 204.2ms | ActiveRecord: 5.0ms | Allocations: 47709)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:48:15 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 10.2ms | Allocations: 779)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 3020)
+Completed 200 OK in 45ms (Views: 28.2ms | ActiveRecord: 1.2ms | Allocations: 4943)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:48:15 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.4ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+No template found for Frame1Controller#qqq, rendering head :no_content
+Completed 204 No Content in 127ms (ActiveRecord: 3.2ms | Allocations: 14351)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:49:01 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2230)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2326)
+Completed 500 Internal Server Error in 14ms (Allocations: 2923)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;                 @categories_L2.each do |item| 
+                                        ^^^^^):
+    17: 
+    18:         <div class="leve2">
+    19:             <ul>
+    20:                 <% @categories_L2.each do |item| %>
+    21:                  <li>
+    22:                      <%= item.name %>
+    23:                  </li>
+  
+app/views/frame1/show2.html.erb:20
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F15" for ::1 at 2022-04-19 15:49:06 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня15"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2222)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2311)
+Completed 500 Internal Server Error in 11ms (Allocations: 2571)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;                 @categories_L2.each do |item| 
+                                        ^^^^^):
+    17: 
+    18:         <div class="leve2">
+    19:             <ul>
+    20:                 <% @categories_L2.each do |item| %>
+    21:                  <li>
+    22:                      <%= item.name %>
+    23:                  </li>
+  
+app/views/frame1/show2.html.erb:20
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F13" for ::1 at 2022-04-19 15:49:31 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня13"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 16)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 9.5ms | Allocations: 2221)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 2309)
+Completed 500 Internal Server Error in 12ms (Allocations: 2549)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;                 @categories_L2.each do |item| 
+                                        ^^^^^):
+    17: 
+    18:         <div class="leve2">
+    19:             <ul>
+    20:                 <% @categories_L2.each do |item| %>
+    21:                  <li>
+    22:                      <%= item.name %>
+    23:                  </li>
+  
+app/views/frame1/show2.html.erb:20
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F13" for ::1 at 2022-04-19 15:49:32 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня13"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 16)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.2ms | Allocations: 2219)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 2307)
+Completed 500 Internal Server Error in 14ms (Allocations: 2547)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;                 @categories_L2.each do |item| 
+                                        ^^^^^):
+    17: 
+    18:         <div class="leve2">
+    19:             <ul>
+    20:                 <% @categories_L2.each do |item| %>
+    21:                  <li>
+    22:                      <%= item.name %>
+    23:                  </li>
+  
+app/views/frame1/show2.html.erb:20
+Started GET "/" for ::1 at 2022-04-19 15:50:01 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/frame1_controller.rb:67:in `show1'
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL ORDER BY "categories"."name" ASC[0m
+  ↳ app/controllers/frame1_controller.rb:71:in `each_with_index'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show1.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 16)
+  Rendered frame1/show1.html.erb within layouts/application (Duration: 7.5ms | Allocations: 339)
+  Rendered layout layouts/application.html.erb (Duration: 63.0ms | Allocations: 13962)
+Completed 200 OK in 192ms (Views: 65.5ms | ActiveRecord: 6.4ms | Allocations: 25164)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F19" for ::1 at 2022-04-19 15:50:03 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня19"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня19"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 70)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 14.6ms | Allocations: 764)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 3017)
+Completed 200 OK in 51ms (Views: 40.8ms | ActiveRecord: 1.1ms | Allocations: 3982)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:50:04 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (6.6ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 108ms (Views: 92.0ms | ActiveRecord: 8.7ms | Allocations: 10897)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F19/2%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F2%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F19" for ::1 at 2022-04-19 15:50:06 +0200
+Processing by Frame1Controller#show3 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня19", "subcategory2"=>"2Категория2уровня19"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня19"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:100:in `show3'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "2Категория2уровня19"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:103:in `show3'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show3.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 17)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = ?[0m  [["parent_id", 221]]
+  ↳ app/views/frame1/show3.html.erb:21
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show3.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 3511)
+Completed 200 OK in 38ms (Views: 23.2ms | ActiveRecord: 1.8ms | Allocations: 4952)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F19" for ::1 at 2022-04-19 15:50:07 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня19"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня19"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 70)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 9.5ms | Allocations: 763)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 3022)
+Completed 200 OK in 41ms (Views: 32.9ms | ActiveRecord: 1.0ms | Allocations: 3808)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:50:08 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 58ms (Views: 56.1ms | ActiveRecord: 0.7ms | Allocations: 7454)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F19" for ::1 at 2022-04-19 15:52:03 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня19"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2230)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2324)
+Completed 500 Internal Server Error in 14ms (Allocations: 2922)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;                 @categories_L2.each do |item| 
+                                        ^^^^^):
+    17: 
+    18:         <div class="leve2">
+    19:             <ul>
+    20:                 <% @categories_L2.each do |item| %>
+    21:                  <li>
+    22:                      <%= item.name %>
+    23:                  </li>
+  
+app/views/frame1/show2.html.erb:20
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F12" for ::1 at 2022-04-19 15:52:09 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня12"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2221)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 2309)
+Completed 500 Internal Server Error in 21ms (Allocations: 2566)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;                 @categories_L2.each do |item| 
+                                        ^^^^^):
+    17: 
+    18:         <div class="leve2">
+    19:             <ul>
+    20:                 <% @categories_L2.each do |item| %>
+    21:                  <li>
+    22:                      <%= item.name %>
+    23:                  </li>
+  
+app/views/frame1/show2.html.erb:20
+Started GET "/" for ::1 at 2022-04-19 15:52:13 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/frame1_controller.rb:67:in `show1'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL ORDER BY "categories"."name" ASC[0m
+  ↳ app/controllers/frame1_controller.rb:71:in `each_with_index'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show1.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 16)
+  Rendered frame1/show1.html.erb within layouts/application (Duration: 2.8ms | Allocations: 339)
+  Rendered layout layouts/application.html.erb (Duration: 80.3ms | Allocations: 13962)
+Completed 200 OK in 113ms (Views: 82.3ms | ActiveRecord: 4.6ms | Allocations: 18088)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:52:16 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 7.3ms | Allocations: 764)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 3014)
+Completed 200 OK in 36ms (Views: 27.0ms | ActiveRecord: 1.1ms | Allocations: 3967)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:52:17 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (5.2ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 95ms (Views: 81.8ms | ActiveRecord: 7.6ms | Allocations: 10918)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F2%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:52:23 +0200
+Processing by Frame1Controller#show3 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10", "subcategory2"=>"Категория2уровня10"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:100:in `show3'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория2уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:103:in `show3'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show3.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 17)
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = ?[0m  [["parent_id", 162]]
+  ↳ app/views/frame1/show3.html.erb:21
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show3.html.erb within layouts/application (Duration: 12.5ms | Allocations: 791)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 3112)
+Completed 200 OK in 38ms (Views: 24.7ms | ActiveRecord: 1.8ms | Allocations: 4490)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F2%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10/%D0%9A3%D0%B03%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F3%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:52:24 +0200
+Processing by Frame1Controller#show4 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10", "subcategory2"=>"Категория2уровня10", "subcategory3"=>"К3а3тегория3уровня10"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show4.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show4.html.erb within layouts/application (Duration: 8.3ms | Allocations: 482)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 2729)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.0ms | Allocations: 3087)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F10" for ::1 at 2022-04-19 15:52:25 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня10"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня10"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 61)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 10.9ms | Allocations: 763)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 3013)
+Completed 200 OK in 40ms (Views: 32.2ms | ActiveRecord: 0.9ms | Allocations: 3798)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:52:26 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (2.5ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 63ms (Views: 59.3ms | ActiveRecord: 2.5ms | Allocations: 7455)
+
+
+Started GET "/" for ::1 at 2022-04-19 15:53:00 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL ORDER BY "categories"."name" ASC[0m
+  ↳ app/controllers/frame1_controller.rb:71:in `each_with_index'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show1.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.0ms | Allocations: 154)
+  Rendered frame1/_bottom.html.erb (Duration: 1.3ms | Allocations: 132)
+  Rendered frame1/show1.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1153)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 3880)
+Completed 200 OK in 41ms (Views: 29.1ms | ActiveRecord: 0.7ms | Allocations: 5714)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 15:53:01 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 16)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 15.4ms | Allocations: 1210)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 3469)
+Completed 200 OK in 43ms (Views: 35.0ms | ActiveRecord: 1.0ms | Allocations: 4393)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:53:02 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (2.9ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 55ms (Views: 51.2ms | ActiveRecord: 2.9ms | Allocations: 7488)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F2%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 15:53:06 +0200
+Processing by Frame1Controller#show3 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1", "subcategory2"=>"Категория2уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:100:in `show3'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория2уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:103:in `show3'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show3.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 16)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = ?[0m  [["parent_id", 153]]
+  ↳ app/views/frame1/show3.html.erb:21
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show3.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 3374)
+Completed 200 OK in 34ms (Views: 21.1ms | ActiveRecord: 1.0ms | Allocations: 4724)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 15:53:08 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 6.5ms | Allocations: 771)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 3034)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.6ms | Allocations: 3818)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:53:08 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (3.1ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 53ms (Views: 48.8ms | ActiveRecord: 3.1ms | Allocations: 7455)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 15:53:39 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.6ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 2.7ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 12.0ms | Allocations: 1670)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 4375)
+Completed 200 OK in 40ms (Views: 31.7ms | ActiveRecord: 0.8ms | Allocations: 5712)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:53:39 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (3.5ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 51ms (Views: 46.9ms | ActiveRecord: 3.5ms | Allocations: 7510)
+
+
+Started GET "/" for ::1 at 2022-04-19 15:55:19 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL ORDER BY "categories"."name" ASC[0m
+  ↳ app/controllers/frame1_controller.rb:71:in `each_with_index'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show1.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.4ms | Allocations: 154)
+  Rendered frame1/_bottom.html.erb (Duration: 1.5ms | Allocations: 132)
+  Rendered frame1/show1.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1150)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 3862)
+Completed 200 OK in 37ms (Views: 27.6ms | ActiveRecord: 0.7ms | Allocations: 5718)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F12" for ::1 at 2022-04-19 15:55:20 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня12"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня12"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.2ms | Allocations: 16)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 63)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1191)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 3441)
+Completed 200 OK in 49ms (Views: 36.1ms | ActiveRecord: 1.0ms | Allocations: 4364)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:55:21 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 76ms (Views: 74.1ms | ActiveRecord: 0.8ms | Allocations: 7489)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F12" for ::1 at 2022-04-19 15:55:56 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня12"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня12"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.7ms | Allocations: 154)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 63)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.9ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1648)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 4376)
+Completed 200 OK in 37ms (Views: 30.5ms | ActiveRecord: 0.9ms | Allocations: 5716)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:55:56 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.9ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.9ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F12/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F2%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F12" for ::1 at 2022-04-19 15:56:01 +0200
+Processing by Frame1Controller#show3 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня12", "subcategory2"=>"Категория2уровня12"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня12"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:100:in `show3'
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория2уровня12"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:103:in `show3'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show3.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = ?[0m  [["parent_id", 164]]
+  ↳ app/views/frame1/show3.html.erb:21
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show3.html.erb within layouts/application (Duration: 13.7ms | Allocations: 1103)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 3356)
+Completed 200 OK in 42ms (Views: 27.3ms | ActiveRecord: 2.2ms | Allocations: 4740)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F12" for ::1 at 2022-04-19 15:56:02 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня12"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня12"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 63)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.7ms | Allocations: 759)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 3010)
+Completed 200 OK in 39ms (Views: 31.4ms | ActiveRecord: 0.8ms | Allocations: 3798)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:56:03 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.9ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 1.9ms | Allocations: 7455)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F12" for ::1 at 2022-04-19 15:56:35 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня12"}
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня12"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 2.3ms | Allocations: 154)
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 63)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 16.4ms | Allocations: 1648)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 4393)
+Completed 200 OK in 47ms (Views: 36.1ms | ActiveRecord: 3.2ms | Allocations: 5733)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:56:36 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (5.1ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 57ms (Views: 50.8ms | ActiveRecord: 5.1ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F12" for ::1 at 2022-04-19 15:57:22 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня12"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня12"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 4.2ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 63)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.5ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 14.9ms | Allocations: 1646)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 4355)
+Completed 200 OK in 41ms (Views: 32.0ms | ActiveRecord: 0.9ms | Allocations: 5732)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:57:23 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.2ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 53ms (Views: 47.9ms | ActiveRecord: 1.2ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F12" for ::1 at 2022-04-19 15:58:03 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня12"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня12"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.2ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 63)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.4ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1650)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 4367)
+Completed 200 OK in 34ms (Views: 28.6ms | ActiveRecord: 0.8ms | Allocations: 5740)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:58:04 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 51ms (Views: 48.9ms | ActiveRecord: 0.7ms | Allocations: 7510)
+
+
+Started GET "/" for ::1 at 2022-04-19 15:58:07 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL ORDER BY "categories"."name" ASC[0m
+  ↳ app/controllers/frame1_controller.rb:71:in `each_with_index'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show1.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show1.html.erb within layouts/application (Duration: 5.6ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 2996)
+Completed 200 OK in 31ms (Views: 22.5ms | ActiveRecord: 1.3ms | Allocations: 4344)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 15:58:09 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.4ms | Allocations: 771)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 3033)
+Completed 200 OK in 45ms (Views: 32.4ms | ActiveRecord: 2.2ms | Allocations: 3849)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:58:09 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.3ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 1.3ms | Allocations: 7454)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 15:58:35 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 2.0ms | Allocations: 154)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.4ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 16.6ms | Allocations: 1666)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 4375)
+Completed 200 OK in 41ms (Views: 32.5ms | ActiveRecord: 0.9ms | Allocations: 5715)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:58:35 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 66ms (Views: 61.6ms | ActiveRecord: 0.8ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 15:58:56 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.5ms | Allocations: 154)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 2.5ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 15.5ms | Allocations: 1662)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 4370)
+Completed 200 OK in 38ms (Views: 30.3ms | ActiveRecord: 1.0ms | Allocations: 5743)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 15:58:56 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.1ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 1.1ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:03:19 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.8ms | Allocations: 154)
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.3ms | Allocations: 135)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 19.3ms | Allocations: 1691)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 4414)
+Completed 200 OK in 43ms (Views: 35.4ms | ActiveRecord: 1.8ms | Allocations: 5788)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:03:19 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (2.0ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 2.0ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:04:41 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 2.2ms | Allocations: 154)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 2.7ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 17.1ms | Allocations: 1687)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 4421)
+Completed 200 OK in 45ms (Views: 36.2ms | ActiveRecord: 1.0ms | Allocations: 5797)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:04:42 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 49ms (Views: 46.1ms | ActiveRecord: 1.8ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:05:31 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 3.3ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.4ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 18.0ms | Allocations: 1688)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 4391)
+Completed 200 OK in 49ms (Views: 41.0ms | ActiveRecord: 0.8ms | Allocations: 5764)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:05:31 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (2.2ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 57ms (Views: 53.8ms | ActiveRecord: 2.2ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:06:10 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.2ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 2.0ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1688)
+  Rendered layout layouts/application.html.erb (Duration: 96.1ms | Allocations: 12892)
+Completed 200 OK in 105ms (Views: 98.8ms | ActiveRecord: 0.8ms | Allocations: 14265)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:06:10 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.1ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 66ms (Views: 63.7ms | ActiveRecord: 1.1ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:09:51 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.9ms | Allocations: 154)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1684)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 4398)
+Completed 200 OK in 35ms (Views: 28.7ms | ActiveRecord: 0.7ms | Allocations: 5774)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:09:51 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.0ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 1.0ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:13:03 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.3ms | Allocations: 154)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.2ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1675)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 4392)
+Completed 200 OK in 31ms (Views: 24.8ms | ActiveRecord: 0.9ms | Allocations: 5765)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:13:03 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.0ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 1.0ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:15:10 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 2.1ms | Allocations: 154)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.5ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1685)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 4430)
+Completed 200 OK in 36ms (Views: 29.9ms | ActiveRecord: 0.8ms | Allocations: 5807)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:15:10 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 60ms (Views: 57.8ms | ActiveRecord: 0.8ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:15:35 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.8ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 2.2ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 17.4ms | Allocations: 1683)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 4389)
+Completed 200 OK in 47ms (Views: 35.8ms | ActiveRecord: 0.8ms | Allocations: 5765)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:15:35 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.7ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:16:36 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.2ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1689)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 4405)
+Completed 200 OK in 36ms (Views: 26.9ms | ActiveRecord: 0.8ms | Allocations: 5778)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:16:36 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 69ms (Views: 67.4ms | ActiveRecord: 0.7ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:17:58 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 2.2ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1694)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 4401)
+Completed 200 OK in 42ms (Views: 32.7ms | ActiveRecord: 0.8ms | Allocations: 5778)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:17:58 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 0.7ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:18:36 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.6ms | Allocations: 154)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.9ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 15.0ms | Allocations: 1684)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 4410)
+Completed 200 OK in 44ms (Views: 33.6ms | ActiveRecord: 1.1ms | Allocations: 5786)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:18:36 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.6ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 60ms (Views: 58.8ms | ActiveRecord: 0.6ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:19:13 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.4ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.0ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1685)
+  Rendered layout layouts/application.html.erb (Duration: 94.3ms | Allocations: 4403)
+Completed 200 OK in 105ms (Views: 97.3ms | ActiveRecord: 0.8ms | Allocations: 5776)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:19:13 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.0ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 68ms (Views: 65.5ms | ActiveRecord: 1.0ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:24:38 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.3ms | Allocations: 154)
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.6ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1691)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 4411)
+Completed 200 OK in 45ms (Views: 29.3ms | ActiveRecord: 3.7ms | Allocations: 6349)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:24:38 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.9ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 56ms (Views: 52.9ms | ActiveRecord: 0.9ms | Allocations: 7540)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:30:26 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.2ms | Allocations: 154)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.5ms | Allocations: 137)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1721)
+  Rendered layout layouts/application.html.erb (Duration: 53.3ms | Allocations: 7050)
+Completed 200 OK in 70ms (Views: 58.5ms | ActiveRecord: 2.0ms | Allocations: 8985)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:30:26 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.3ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 57ms (Views: 52.7ms | ActiveRecord: 1.3ms | Allocations: 7539)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:31:15 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.4ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.6ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1743)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 4465)
+Completed 200 OK in 46ms (Views: 36.7ms | ActiveRecord: 0.8ms | Allocations: 5839)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:31:16 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (2.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 65ms (Views: 61.1ms | ActiveRecord: 2.7ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:32:07 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.5ms | Allocations: 154)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1739)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 4454)
+Completed 200 OK in 36ms (Views: 27.3ms | ActiveRecord: 0.9ms | Allocations: 5828)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:32:07 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 58ms (Views: 53.6ms | ActiveRecord: 0.8ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:34:58 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 5.1ms | Allocations: 154)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 14.0ms | Allocations: 1736)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 4456)
+Completed 200 OK in 41ms (Views: 32.4ms | ActiveRecord: 0.7ms | Allocations: 5834)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:34:58 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.1ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 1.1ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:35:04 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 7.0ms | Allocations: 771)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 3025)
+Completed 200 OK in 28ms (Views: 20.5ms | ActiveRecord: 0.9ms | Allocations: 3845)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:35:05 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.0ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 1.0ms | Allocations: 7454)
+
+
+Started GET "/" for ::1 at 2022-04-19 16:35:06 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL ORDER BY "categories"."name" ASC[0m
+  ↳ app/controllers/frame1_controller.rb:71:in `each_with_index'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show1.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show1.html.erb within layouts/application (Duration: 5.9ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 2991)
+Completed 200 OK in 36ms (Views: 26.6ms | ActiveRecord: 0.9ms | Allocations: 4341)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:35:08 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.9ms | Allocations: 771)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 3039)
+Completed 200 OK in 39ms (Views: 31.3ms | ActiveRecord: 1.0ms | Allocations: 3822)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:35:08 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.9ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 69ms (Views: 63.8ms | ActiveRecord: 1.9ms | Allocations: 7454)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:35:27 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.1ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.6ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 17.6ms | Allocations: 1735)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 4431)
+Completed 200 OK in 42ms (Views: 34.3ms | ActiveRecord: 0.9ms | Allocations: 5767)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:35:27 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 57ms (Views: 55.2ms | ActiveRecord: 0.7ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:37:14 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.6ms | Allocations: 154)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1745)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 4450)
+Completed 200 OK in 39ms (Views: 30.9ms | ActiveRecord: 1.0ms | Allocations: 5823)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:37:15 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.9ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.9ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:38:18 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.1ms | Allocations: 154)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1753)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 4458)
+Completed 200 OK in 37ms (Views: 30.2ms | ActiveRecord: 1.0ms | Allocations: 5831)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:38:18 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.1ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 77ms (Views: 74.9ms | ActiveRecord: 1.1ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:38:40 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.3ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.3ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1712)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 4431)
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 0.9ms | Allocations: 5807)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:38:40 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.8ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1/2%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F2%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:39:10 +0200
+Processing by Frame1Controller#show3 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1", "subcategory2"=>"2Категория2уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:100:in `show3'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "2Категория2уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:103:in `show3'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show3.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (3.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = ?[0m  [["parent_id", 203]]
+  ↳ app/views/frame1/show3.html.erb:21
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show3.html.erb within layouts/application (Duration: 14.2ms | Allocations: 1114)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 3377)
+Completed 200 OK in 42ms (Views: 26.7ms | ActiveRecord: 3.8ms | Allocations: 4763)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1/2%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F2%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1/%D0%9A3%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F3%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F51" for ::1 at 2022-04-19 16:39:12 +0200
+Processing by Frame1Controller#show4 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1", "subcategory2"=>"2Категория2уровня1", "subcategory3"=>"К3атегория3уровня51"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show4.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show4.html.erb within layouts/application (Duration: 6.2ms | Allocations: 446)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 2714)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 3052)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1/2%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F2%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1/%D0%9A3%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F3%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F51" for ::1 at 2022-04-19 16:41:51 +0200
+Processing by Frame1Controller#show4 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1", "subcategory2"=>"2Категория2уровня1", "subcategory3"=>"К3атегория3уровня51"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show4.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.1ms | Allocations: 156)
+  Rendered frame1/_bottom.html.erb (Duration: 1.4ms | Allocations: 132)
+  Rendered frame1/show4.html.erb within layouts/application (Duration: 8.6ms | Allocations: 847)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 3565)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.0ms | Allocations: 4408)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:41:54 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 3503)
+Completed 200 OK in 40ms (Views: 29.6ms | ActiveRecord: 1.1ms | Allocations: 4435)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:41:54 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.8ms | Allocations: 7488)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F2%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:41:55 +0200
+Processing by Frame1Controller#show3 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1", "subcategory2"=>"Категория2уровня1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:100:in `show3'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория2уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:103:in `show3'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show3.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = ?[0m  [["parent_id", 153]]
+  ↳ app/views/frame1/show3.html.erb:21
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show3.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1114)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 3364)
+Completed 200 OK in 42ms (Views: 30.9ms | ActiveRecord: 1.0ms | Allocations: 4712)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:41:57 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 14.5ms | Allocations: 771)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 3028)
+Completed 200 OK in 46ms (Views: 35.9ms | ActiveRecord: 1.1ms | Allocations: 3811)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:41:58 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (5.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 52ms (Views: 45.2ms | ActiveRecord: 5.8ms | Allocations: 7454)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:42:09 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 3.0ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.2ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1706)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 4393)
+Completed 200 OK in 35ms (Views: 29.0ms | ActiveRecord: 0.8ms | Allocations: 5729)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:42:09 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.7ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:43:39 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 3.2ms | Allocations: 154)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.5ms | Allocations: 3002)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3096)
+Completed 500 Internal Server Error in 17ms (Allocations: 3882)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;                 @categories_L2.each do |item| 
+                                        ^^^^^):
+    17: 
+    18:         <div class="leve2">
+    19:             <ul>
+    20:                 <% @categories_L2.each do |item| %>
+    21:                  <li>
+    22:                      <%= item.name %>
+    23:                  </li>
+  
+app/views/frame1/show2.html.erb:20
+Started GET "/" for ::1 at 2022-04-19 16:43:44 +0200
+Processing by Frame1Controller#show1 as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/frame1_controller.rb:67:in `show1'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL ORDER BY "categories"."name" ASC[0m
+  ↳ app/controllers/frame1_controller.rb:71:in `each_with_index'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show1.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered frame1/_bottom.html.erb (Duration: 1.2ms | Allocations: 132)
+  Rendered frame1/show1.html.erb within layouts/application (Duration: 7.4ms | Allocations: 961)
+  Rendered layout layouts/application.html.erb (Duration: 88.6ms | Allocations: 14765)
+Completed 200 OK in 140ms (Views: 98.1ms | ActiveRecord: 10.0ms | Allocations: 18963)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:43:46 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mCategory Load (3.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 13.2ms | Allocations: 776)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 3038)
+Completed 200 OK in 44ms (Views: 33.5ms | ActiveRecord: 3.8ms | Allocations: 3990)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:43:46 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.0ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 75ms (Views: 67.6ms | ActiveRecord: 2.8ms | Allocations: 10890)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:44:24 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.1ms | Allocations: 154)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1752)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 4460)
+Completed 200 OK in 35ms (Views: 28.1ms | ActiveRecord: 1.2ms | Allocations: 5864)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:44:25 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (1.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 57ms (Views: 54.4ms | ActiveRecord: 1.8ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:44:27 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.4ms | Allocations: 16)
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 7.2ms | Allocations: 771)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 3036)
+Completed 200 OK in 27ms (Views: 19.8ms | ActiveRecord: 1.2ms | Allocations: 3856)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:44:28 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.9ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 63ms (Views: 59.6ms | ActiveRecord: 0.9ms | Allocations: 7454)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:44:39 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.8ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1756)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 4473)
+Completed 200 OK in 39ms (Views: 29.9ms | ActiveRecord: 0.8ms | Allocations: 5809)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:44:39 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 75ms (Views: 73.2ms | ActiveRecord: 0.7ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:44:54 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 2.3ms | Allocations: 154)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.3ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 15.4ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 4473)
+Completed 200 OK in 39ms (Views: 33.1ms | ActiveRecord: 0.9ms | Allocations: 5849)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:44:54 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 57ms (Views: 55.5ms | ActiveRecord: 0.7ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:45:43 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 0.8ms | Allocations: 154)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.1ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 4463)
+Completed 200 OK in 31ms (Views: 24.5ms | ActiveRecord: 0.9ms | Allocations: 5836)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:45:43 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.8ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 71ms (Views: 68.6ms | ActiveRecord: 0.8ms | Allocations: 7511)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:46:39 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.2ms | Allocations: 154)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.3ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 16.1ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 4497)
+Completed 200 OK in 49ms (Views: 42.6ms | ActiveRecord: 0.8ms | Allocations: 5870)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:46:39 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 56ms (Views: 53.2ms | ActiveRecord: 0.7ms | Allocations: 7510)
+
+
+Started GET "/qqq/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F1%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F1" for ::1 at 2022-04-19 16:47:53 +0200
+Processing by Frame1Controller#show2 as HTML
+  Parameters: {"subcategory1"=>"Категория1уровня1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Категория1уровня1"], ["LIMIT", 1]]
+  ↳ app/controllers/frame1_controller.rb:89:in `show2'
+  Rendering layout layouts/application.html.erb
+  Rendering frame1/show2.html.erb within layouts/application
+  Rendered frame1/_top.html.erb (Duration: 1.5ms | Allocations: 154)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (parent_id= 52)[0m
+  ↳ app/views/frame1/show2.html.erb:20
+  Rendered frame1/_bottom.html.erb (Duration: 1.8ms | Allocations: 132)
+  Rendered frame1/show2.html.erb within layouts/application (Duration: 15.6ms | Allocations: 1759)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 4470)
+Completed 200 OK in 43ms (Views: 35.1ms | ActiveRecord: 1.0ms | Allocations: 5846)
+
+
+Started GET "/qqq" for ::1 at 2022-04-19 16:47:53 +0200
+Processing by Frame1Controller#qqq as */*
+  [1m[36mMaterial Load (0.7ms)[0m  [1m[34mSELECT "materials".* FROM "materials"[0m
+  ↳ app/controllers/frame1_controller.rb:121:in `qqq'
+Completed 200 OK in 54ms (Views: 48.2ms | ActiveRecord: 0.7ms | Allocations: 7510)
+
+

@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  unit: MyString
+  price_retail: 1
+  price_wholesale: 1
+  amount_wholesale: 1
+  category: MyString
+  place: MyString
+  company: MyString
+  days_left: 1
+
+two:
+  description: MyString
+  unit: MyString
+  price_retail: 1
+  price_wholesale: 1
+  amount_wholesale: 1
+  category: MyString
+  place: MyString
+  company: MyString
+  days_left: 1
