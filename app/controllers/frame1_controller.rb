@@ -47,20 +47,21 @@ class Frame1Controller < ApplicationController
                 end
 
 
-                # render json: @column1
-
 
 
         end
 ################
         def show2
            
-          
+            # puts params[:subcategory1]
             active_category1 = Category.find_by(name:params[:subcategory1])
             @active_category1_name = active_category1.name
             @categories_L2 = Category.where("parent_id= #{active_category1.id}")
 
             @current_param = params[:subcategory1].to_s
+
+
+
         end
 ################
         def show3
@@ -82,4 +83,12 @@ class Frame1Controller < ApplicationController
         end
 ################
     end
+
+    def qqq
+        @results = Category.all
+        render json: @results
+
+    end
+
+
 end

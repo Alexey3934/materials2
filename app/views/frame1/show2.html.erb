@@ -7,31 +7,57 @@
 
 
 
+<div class='flex'>
+    <div>    
+        <div style="border: solid" id="to_root">кнопка перехода на первый фрейм</div>
 
-<div style="border: solid" id="to_root">кнопка перехода на первый фрейм</div>
+        <div id="leve1" class="bold">
+            <%= @active_category1_name %>
+        </div>
 
-<div id="leve1" class="bold">
-    <%= @active_category1_name %>
+        <div class="leve2">
+            <ul>
+                <% @categories_L2.each do |item| %>
+                 <li>
+                     <%= item.name %>
+                 </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <td>название</td> 
+            <td>ед.изм.</td>
+            <td>цена розн.</td>
+            <td>цена опт.</td>
+            <td>объём опта</td>
+            <td>компания</td>
+            <td>тел для заказа</td>
+        </tr>
+        <tr>
+            <td>название1</td> 
+            <td>шт</td>
+            <td>1000</td>
+            <td>800</td>
+            <td>50</td>
+            <td>стойстой</td>
+            <td>89991111111</td>
+        </tr>
+        <tr>
+            <td>название2</td> 
+            <td>шт</td>
+            <td>1100</td>
+            <td>900</td>
+            <td>80</td>
+            <td>стойстой</td>
+            <td>89991111111</td>
+        </tr>
+    </table>
+
+
 </div>
-
-
-
-
-<div class="leve2">
-    <ul>
-
-
-        <% @categories_L2.each do |item| %>
-         <li>
-             <%= item.name %>
-
-         </li>
-        <% end %>
-
-
-    </ul>
-</div>
-
 
 
 
@@ -42,7 +68,7 @@
 
 <%= render "bottom" %>
 
- 
+    
 
 
 
@@ -62,9 +88,21 @@
 
         if (target.length < 100) {
             target = target.replace(/\s+/g, '');
-            window.location.href = `/${leve1}/${target}`
+            window.location.href = `/qqq/${leve1}/${target}`
         }
     } )
 
 
+
+    async function fn() {
+      let response = await fetch('/qqq');
+      let data =     await response.json()  
+
+
+console.log(data)
+
+
+    }
+    fn()
+  
 </script>

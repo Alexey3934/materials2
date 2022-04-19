@@ -35,3 +35,13 @@ li {margin: 1vw;}
 #to_root {margin-bottom: 2vw;}
 
 .bold {font-weight: bold;}
+
+
+table {
+    background-color: rgb(193, 222, 223);
+    border-collapse: collapse;
+    height: 3vw;
+}
+
+td {border: gray solid thin;}
+  
