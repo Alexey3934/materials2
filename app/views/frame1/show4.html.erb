@@ -22,7 +22,22 @@
             <%= @subcategory3_name %>
         </div>
 
+        <div class="leve2">
+            <% @rest_categories_level2.each do |item|%>
+            <p>
+            <%= item.name %>
+            </p>
+            <% end %>
+        </div>
 
+
+        <div class="level1">
+            <% @rest_categories_level1.each do |item|%>
+            <p>
+            <%= item.name %>
+            </p>
+            <% end %>
+        </div>
 
 
 

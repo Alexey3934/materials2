@@ -84,16 +84,15 @@ class Frame1Controller < ApplicationController
         end
 ################
         def show2
-           
-            # puts params[:subcategory1]
             active_category1 = Category.find_by(name:params[:subcategory1])
             @active_category1_name = active_category1.name
-            @categories_L2 = Category.where("parent_id= #{active_category1.id}")
+            @categories_L2 = Category.where(parent_id:active_category1.id)
 
             @current_param = params[:subcategory1].to_s
 
-
-
+            cur1 = Category.where(parent_id:nil)
+            @rest_categories_level1 = cur1.where.not(name:params[:subcategory1])
+            # render json: @rest_categories_level1
         end
 ################
         def show3
@@ -106,12 +105,27 @@ class Frame1Controller < ApplicationController
             current_category_parent_id_l2 = current_category_L2.id
             @categories_L3 = Category.where(parent_id: current_category_parent_id_l2)
 
+            cur1 = Category.where(parent_id:nil)
+            @rest_categories_level1 = cur1.where.not(name:params[:subcategory1])
+
+            cur_el_lev2 = Category.find_by(name:params[:subcategory2])
+            cur2 = Category.where(parent_id:cur_el_lev2.parent_id)
+            @rest_categories_level2 = cur2.where.not(name:params[:subcategory2])
         end
 ################
         def show4
             @subcategory1_name = params[:subcategory1]
             @subcategory2_name = params[:subcategory2]
             @subcategory3_name = params[:subcategory3]
+
+
+            cur1 = Category.where(parent_id:nil)
+            @rest_categories_level1 = cur1.where.not(name:params[:subcategory1])
+
+            cur_el_lev2 = Category.find_by(name:params[:subcategory2])
+            cur2 = Category.where(parent_id:cur_el_lev2.parent_id)
+            @rest_categories_level2 = cur2.where.not(name:params[:subcategory2])
+
         end
 ################
     end

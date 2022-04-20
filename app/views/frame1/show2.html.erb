@@ -25,6 +25,16 @@
                 <% end %>
             </ul>
         </div>
+    
+    <div id="level1" class="level1">
+        <% @rest_categories_level1.each do |item|%>
+        <p>
+        <%= item.name %>
+        </p>
+        <% end %>
+    </div>
+    
+    
     </div>
 
 
@@ -68,4 +78,14 @@
             window.location.href = `/qqq/${leve1}/${target}`
         }
     } )
+
+    // const div_level1 = 
+
+
+
+
+
+
+
+
 </script>
