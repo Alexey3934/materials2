@@ -22,7 +22,18 @@
             <%= @subcategory3_name %>
         </div>
 
-        <div class="leve2">
+
+        <div id="level3_rest" class="leve3">
+            <% @rest_categoties_level3.each do |item|%>
+            <p>
+            <%= item.name %>
+            </p>
+            <% end %>
+        </div>
+
+        
+
+        <div id="level2_rest" class="leve2">
             <% @rest_categories_level2.each do |item|%>
             <p>
             <%= item.name %>
@@ -31,7 +42,7 @@
         </div>
 
 
-        <div class="level1">
+        <div id="level1_rest" class="level1">
             <% @rest_categories_level1.each do |item|%>
             <p>
             <%= item.name %>
@@ -86,4 +97,31 @@
     level2.addEventListener('click', ()=> window.location.href =  `/qqq/${level1_name}/${level2_name}`)
 
 
+
+    const level1_rest = document.querySelector("#level1_rest")
+    level1_rest.addEventListener('click', el => {
+        let target = el.target.innerHTML
+        if (target.length < 100) {
+            target = target.replace(/\s+/g, '');
+            window.location.href = `/qqq/${target}`
+        }
+    } )
+
+    const level2_rest = document.querySelector("#level2_rest")
+    level2_rest.addEventListener('click', el => {
+        let target = el.target.innerHTML
+        if (target.length < 100) {
+            target = target.replace(/\s+/g, '');
+            window.location.href = `/qqq/${level1_name}/${target}`
+        }
+    } )
+
+    const level3_rest = document.querySelector("#level3_rest")
+    level3_rest.addEventListener('click', el => {
+        let target = el.target.innerHTML
+        if (target.length < 100) {
+            target = target.replace(/\s+/g, '');
+            window.location.href = `/qqq/${level1_name}/${level2_name}/${target}`
+        }
+    } )
 </script>

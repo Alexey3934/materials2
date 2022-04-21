@@ -126,6 +126,9 @@ class Frame1Controller < ApplicationController
             cur2 = Category.where(parent_id:cur_el_lev2.parent_id)
             @rest_categories_level2 = cur2.where.not(name:params[:subcategory2])
 
+            cur3 = Category.where(parent_id:cur_el_lev2.id)
+            @rest_categoties_level3 = cur3.where.not(name:params[:subcategory3])
+
         end
 ################
     end

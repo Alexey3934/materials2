@@ -18,7 +18,7 @@
 
 
 
-        <div class="leve3">
+        <div id="level3_rest" class="leve3">
             <ul>
                     <% @categories_L3.each do |el| %>
                 <li>
@@ -28,7 +28,7 @@
             </ul>
         </div>
 
-        <div class="leve2">
+        <div id="level2_rest" class="leve2">
             <% @rest_categories_level2.each do |item|%>
             <p>
             <%= item.name %>
@@ -37,7 +37,7 @@
         </div>
 
 
-        <div class="level1">
+        <div id="level1_rest" class="level1">
             <% @rest_categories_level1.each do |item|%>
             <p>
             <%= item.name %>
@@ -99,6 +99,26 @@
      } )
 
     leve1.addEventListener('click', () => window.location.href = `/qqq/${leve1_name}`)
+
+
+
+    const level1_rest = document.querySelector("#level1_rest")
+    level1_rest.addEventListener('click', el => {
+        let target = el.target.innerHTML
+        if (target.length < 100) {
+            target = target.replace(/\s+/g, '');
+            window.location.href = `/qqq/${target}`
+        }
+    } )
+
+    const level2_rest = document.querySelector("#level2_rest")
+    level2_rest.addEventListener('click', el => {
+        let target = el.target.innerHTML
+        if (target.length < 100) {
+            target = target.replace(/\s+/g, '');
+            window.location.href = `/qqq/${leve1_name}/${target}`
+        }
+    } )
 
 
 </script>

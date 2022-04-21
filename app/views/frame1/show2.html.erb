@@ -26,7 +26,7 @@
             </ul>
         </div>
     
-    <div id="level1" class="level1">
+    <div id="level1_rest" class="level1">
         <% @rest_categories_level1.each do |item|%>
         <p>
         <%= item.name %>
@@ -93,6 +93,16 @@
             window.location.href = `/qqq/${leve1}/${target}`
         }
     } )
+
+    const level1_rest = document.querySelector("#level1_rest")
+    level1_rest.addEventListener('click', el => {
+        let target = el.target.innerHTML
+        if (target.length < 100) {
+            target = target.replace(/\s+/g, '');
+            window.location.href = `/qqq/${target}`
+        }
+    } )
+
 
 
 

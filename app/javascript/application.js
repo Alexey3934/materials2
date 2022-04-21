@@ -8,6 +8,8 @@ async function get_data() {
     return data
 }
 let data = await get_data()
+/////////////////////////////////////////////////////
+
 
 const build_table = (data) => {    
     const table = document.querySelector('#table')
@@ -35,31 +37,37 @@ const build_table = (data) => {
     }
 }
 
-const sorting = (raw_data, sort_value) => {
-    new_data = []
-    // if (sort_value instanceof Number)
-}
+const compare_fn = (a, b) => a.but_price_retail_top - b.but_price_retail_top
 
-const fn = (sort_value) => {
-    console.log('1')
+const fn = (e) => {
+    console.log("click")
+    const new_data = data
+    const button_id = e.target.id
     const values_of_sort = {but_name_top: "but_name_top", but_name_bottom: "but_name_bottom", but_price_retail_top: "but_price_retail_top", but_price_retail_bottom: "but_price_retail_bottom", but_price_wholesale_top: "but_price_wholesale_top", but_price_wholesale_bottom: "but_price_wholesale_bottom"}
-    switch (sort_value) {
-        case values_of_sort.but_name_top:
-            console.log('1')
-            data = data.sort()
-            build_table(data)
-        break;
-        case values_of_sort.but_name_bottom:
-            console.log('2')
-            data = data.sort().reverse()
-            build_table(data)
-        break;
-        // case values_of_sort.but_price_retail_top:
-        //     data = sorting(data, values_of_sort.but_price_retail_top)
+    
+    switch (button_id) {
+        // case values_of_sort.but_name_top:
+        //     data = data.sort(sorting)
+        //     build_table(data)
         // break;
-        // case values_of_sort.but_price_retail_bottom:
-        //     data = sorting(data, values_of_sort.but_price_retail_bottom)
+        // case values_of_sort.but_name_bottom:
+        //     data = data.sort().reverse()
+        //     build_table(data)
         // break;
+        case values_of_sort.but_price_retail_top:
+            console.log("1")
+            // const new_data1 = new_data.sort(compare_fn)
+            // console.log(new_data1[0].id)
+            // build_table(data.sort(compare_fn))
+            build_table(data.reverse())
+            break;
+        case values_of_sort.but_price_retail_bottom:
+            console.log("2")
+
+            // const new_data2 = new_data.sort(compare_fn).reverse()
+            // console.log(new_data2[0].id)
+            build_table(data.reverse())
+        break;
     }
 }
 
@@ -70,12 +78,12 @@ const but_price_retail_bottom    = document.querySelector("#but_price_retail_bot
 const but_price_wholesale_top    = document.querySelector("#but_price_wholesale_top")
 const but_price_wholesale_bottom = document.querySelector("#but_price_wholesale_bottom")
 
-but_name_top.addEventListener("click", fn("but_name_top"))
-but_name_bottom.addEventListener("click", fn("but_name_bottom"))
-but_price_retail_top.addEventListener("click", fn("but_price_retail_top"))
-but_price_retail_bottom.addEventListener("click", fn("but_price_retail_bottom"))
-but_price_wholesale_top.addEventListener("click", fn("but_price_wholesale_top"))
-but_price_wholesale_bottom.addEventListener("click", fn("but_price_wholesale_bottom"))
+// but_name_top.addEventListener("click", fn)
+// but_name_bottom.addEventListener("click", fn)
+// but_price_retail_top.addEventListener("click", fn)
+// but_price_retail_bottom.addEventListener("click", fn)
+// but_price_wholesale_top.addEventListener("click", fn)
+// but_price_wholesale_bottom.addEventListener("click", fn)
 
 
 
@@ -84,5 +92,13 @@ but_price_wholesale_bottom.addEventListener("click", fn("but_price_wholesale_bot
 
 
 
-// build_table(sorted_data)
+build_table(data)
 
+// const test = [1, 4, 6, 9, 5, 4, 3]
+
+// function comp(a, b) {
+//     return a - b 
+// }
+
+
+// console.log(` test = ${test.sort(comp)}`)
