@@ -22,61 +22,81 @@ const build_table = (data) => {
                             row.amount_wholesale,
                             row.company,
                             '89891112233']  
-
         for (const field of data_fields) {
             const cell = document.createElement("td");
             const cellText = document.createTextNode(field)
             cell.appendChild(cellText)
             cell.classList.add('td')
             trEl.appendChild(cell);
-        
         }
-
-
         table.appendChild(trEl)
     }
 }
+build_table(data)
 
-const compare_fn = (a, b) => a.but_price_retail_top - b.but_price_retail_top
+
+
+
+
+
+
+
+ 
+const compare_fn1 = (a, b) => a.price_retail - b.price_retail
+const compare_fn2 = (a, b) => b.price_retail - a.price_retail
 
 const fn = (e) => {
-    console.log("click")
-    const new_data = data
-    const button_id = e.target.id
-    const values_of_sort = {but_name_top: "but_name_top", but_name_bottom: "but_name_bottom", but_price_retail_top: "but_price_retail_top", but_price_retail_bottom: "but_price_retail_bottom", but_price_wholesale_top: "but_price_wholesale_top", but_price_wholesale_bottom: "but_price_wholesale_bottom"}
-    
-    switch (button_id) {
+
+    const tr_nodes = document.querySelectorAll("#table tr")
+    const [first, ...rows] = tr_nodes
+     
+
+    const values_of_sort = {but_name_top: "but_name_top", but_name_bottom: "but_name_bottom", but_price_retail_top: "but_price_retail_top", but_price_retail_bottom: "but_price_retail_bottom", but_price_wholesale_top: "but_price_wholesale_top", but_price_wholesale_bottom: "but_price_wholesale_bottom"} 
+    switch (e.target.id) {
         // case values_of_sort.but_name_top:
-        //     data = data.sort(sorting)
-        //     build_table(data)
+        //     console.log("1")
+        //     // data = data.sort(sorting)
+        //     // build_table(data)
         // break;
         // case values_of_sort.but_name_bottom:
-        //     data = data.sort().reverse()
-        //     build_table(data)
+        //     console.log("2")
+        //     // data = data.sort().reverse()
+        //     // build_table(data)
         // break;
         case values_of_sort.but_price_retail_top:
-            console.log("1")
-            // const new_data1 = new_data.sort(compare_fn)
-            // console.log(new_data1[0].id)
-            // build_table(data.sort(compare_fn))
-            build_table(data.reverse())
-            break;
-        case values_of_sort.but_price_retail_bottom:
-            console.log("2")
-
-            // const new_data2 = new_data.sort(compare_fn).reverse()
-            // console.log(new_data2[0].id)
-            build_table(data.reverse())
+            console.log("3")
+            rows.forEach(el=>el.remove())
+            build_table(data.sort(compare_fn1))
         break;
+        case values_of_sort.but_price_retail_bottom:
+            console.log("4")
+            rows.forEach(el=>el.remove())
+            build_table(data.sort(compare_fn2))
+        break;
+        // case values_of_sort.but_price_wholesale_top:
+        //     console.log("5")
+        //     new_rows.sort(compare_fn)
+        //     build_table(new_rows)
+        // break;
+        // case values_of_sort.but_price_wholesale_bottom:
+        //     console.log("6")
+        //     new_rows.sort(compare_fn)
+        //     build_table(new_rows)
+        // break;
     }
 }
 
-const but_name_top               = document.querySelector("#but_name_top")
-const but_name_bottom            = document.querySelector("#but_name_bottom")
-const but_price_retail_top       = document.querySelector("#but_price_retail_top")
-const but_price_retail_bottom    = document.querySelector("#but_price_retail_bottom")
-const but_price_wholesale_top    = document.querySelector("#but_price_wholesale_top")
-const but_price_wholesale_bottom = document.querySelector("#but_price_wholesale_bottom")
+const buttons_to_sort = document.querySelectorAll(".sort")
+buttons_to_sort.forEach(but => but.addEventListener("click", fn))
+
+
+
+// const but_name_top               = document.querySelector("#but_name_top")
+// const but_name_bottom            = document.querySelector("#but_name_bottom")
+// const but_price_retail_top       = document.querySelector("#but_price_retail_top")
+// const but_price_retail_bottom    = document.querySelector("#but_price_retail_bottom")
+// const but_price_wholesale_top    = document.querySelector("#but_price_wholesale_top")
+// const but_price_wholesale_bottom = document.querySelector("#but_price_wholesale_bottom")
 
 // but_name_top.addEventListener("click", fn)
 // but_name_bottom.addEventListener("click", fn)
@@ -92,7 +112,6 @@ const but_price_wholesale_bottom = document.querySelector("#but_price_wholesale_
 
 
 
-build_table(data)
 
 // const test = [1, 4, 6, 9, 5, 4, 3]
 
