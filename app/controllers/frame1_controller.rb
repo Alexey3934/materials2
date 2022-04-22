@@ -31,35 +31,33 @@ class Frame1Controller < ApplicationController
             # end
 
 # # наполнение таблицы materials
-#             description = 'описание'
-#             unit = 'кв.м'
-#             price_retail = 10000
-#             price_wholesale = 8000
-#             amount_wholesale = 50
-#             category = 'категория'
-#             place = 'регион'
-#             days_left = 0
-#             company = 'компания'
+            # description = 'одинаковое название'
+            # unit = 'кв.м'
+            # price_retail = 10000
+            # price_wholesale = 8000
+            # amount_wholesale = 50
+            # category = 'категория'
+            # place = 'регион'
+            # days_left = 0
+            # company = 'компания'
 
-#             i = 0
+            # i = 0
 
-#             40.times do
+            # 10.times do
 
-#                 Material.create(
-#                     description:description+i.to_s,
-#                     unit:unit,
-#                     price_retail:price_retail+i,
-#                     price_wholesale:price_wholesale+i,
-#                     amount_wholesale:amount_wholesale+i,
-#                     category:category+i.to_s,
-#                     place:place+i.to_s,
-#                     days_left:days_left+i,
-#                     company:company+i.to_s
-#                 )
-#                 i = i + 1
-#             end
-
-
+            #     Material.create(
+            #         description:description,
+            #         unit:unit,
+            #         price_retail:price_retail+i,
+            #         price_wholesale:price_wholesale+i,
+            #         amount_wholesale:amount_wholesale+i,
+            #         category:category+i.to_s,
+            #         place:place+i.to_s,
+            #         company:company+i.to_s,
+            #         days_left:days_left+i
+            #     )
+            #     i = i + 1
+            # end
 
 
 

@@ -54,5 +54,7 @@ table {
 }
 
   
+.active{background-color: rgb(82, 41, 35);}
+.ban {background-color: red;}
 
 svg {pointer-events: none;}
