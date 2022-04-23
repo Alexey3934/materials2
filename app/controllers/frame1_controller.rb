@@ -31,7 +31,7 @@ class Frame1Controller < ApplicationController
             # end
 
 # # наполнение таблицы materials
-            # description = 'одинаковое название'
+            # description = 'кирпичи'
             # unit = 'кв.м'
             # price_retail = 10000
             # price_wholesale = 8000
@@ -46,7 +46,7 @@ class Frame1Controller < ApplicationController
             # 10.times do
 
             #     Material.create(
-            #         description:description,
+            #         description:description+i.to_s,
             #         unit:unit,
             #         price_retail:price_retail+i,
             #         price_wholesale:price_wholesale+i,
@@ -54,7 +54,9 @@ class Frame1Controller < ApplicationController
             #         category:category+i.to_s,
             #         place:place+i.to_s,
             #         company:company+i.to_s,
+            #         phone: '89997774422',
             #         days_left:days_left+i
+
             #     )
             #     i = i + 1
             # end

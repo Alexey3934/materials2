@@ -1,0 +1,56 @@
+<%= render "top"%>
+
+<div id="title">Добавление товара</div>
+
+
+
+<%= form_with model: @material do |form| %>
+
+
+  <div>
+      <%= form.label :description %><br>
+      <%= form.text_field :description %>
+  </div>
+  <div>
+      <%= form.label :unit %><br>
+      <%= form.text_field :unit %>
+  </div>
+  <div>
+      <%= form.label :price_retail %><br>
+      <%= form.number_field  :price_retail %>
+  </div>
+  <div>
+      <%= form.label :price_wholesale %><br>
+      <%= form.number_field  :price_wholesale %>
+  </div>
+  <div>
+      <%= form.label :amount_wholesale %><br>
+      <%= form.number_field  :amount_wholesale %>
+  </div>
+  <div>
+      <%= form.label :category %><br>
+      <%= form.text_field :category %>
+  </div>
+  <div>
+      <%= form.label :place %><br>
+      <%= form.text_field :place %>
+  </div>
+  <div>
+      <%= form.label :company %><br>
+      <%= form.text_field :company %>
+  </div>
+  <div>
+      <%= form.label :phone %><br>
+      <%= form.text_field :phone %>
+  </div>  
+  <div>
+      <%= form.label :days_left %><br>
+      <%= form.number_field  :days_left %>
+  </div>
+
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

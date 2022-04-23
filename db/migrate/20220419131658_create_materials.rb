@@ -9,7 +9,9 @@ class CreateMaterials < ActiveRecord::Migration[7.0]
       t.string :category
       t.string :place
       t.string :company
+      t.string :phone
       t.integer :days_left
+
 
       t.timestamps
     end

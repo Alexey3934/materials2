@@ -8,8 +8,13 @@
 
     <div id='right'>
         <p>ВХОД/РЕГИСТРАЦИЯ</p>
-        <p>Добавить товар</p>
+        <button id="add_material">Добавить товар</button>
     </div>
 
 </div>
-<%# <input value="поиск" size='50'> %>
+
+
+<script>
+    const add_material = document.querySelector("#add_material")
+    add_material.addEventListener("click", ()=> window.location.href = '/materials/new')
+</script>

@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get "/post_material"                                ,  to: 'post_material#index'
-  # get 'category/show3'
-  # get 'category/show4'
+  # resources :articles
+  
+  # get "/materials/new" , to: 'materials#new'
+  # post "/materials/new" , to: 'materials#create'
+  resources :materials
   # root 'frame1#show'
-
+  
   get "/"                                             ,  to: 'frame1#show1'
   get "/qqq/:subcategory1"                            ,  to: 'frame1#show2'
-  
-  
   get "/qqq/:subcategory1/:subcategory2"              ,  to: 'frame1#show3'
   get "/qqq/:subcategory1/:subcategory2/:subcategory3",  to: 'frame1#show4'
 
@@ -18,3 +18,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 end
+
+
+
+

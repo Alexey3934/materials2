@@ -21,7 +21,7 @@ const build_table = (data) => {
                             row.price_wholesale,
                             row.amount_wholesale,
                             row.company,
-                            '89891112233']  
+                            row.phone]  
         for (const field of data_fields) {
             const cell = document.createElement("td");
             const cellText = document.createTextNode(field)
@@ -187,3 +187,5 @@ buttons_to_sort.forEach(but=>{
     if (but.id.match(/.*(top)/)) but.innerHTML = '<svg width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg"><line x1="6" y1="11" x2="6" y2="0" stroke="black"/><line x1="0" y1="5" x2="6" y2="0" stroke="black"/><line x1="11" y1="5" x2="6" y2="0" stroke="black"/></svg>'
     if (but.id.match(/.*(bottom)/)) but.innerHTML = '<svg width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg"><line x1="6" y1="11" x2="6" y2="0" stroke="black"/><line x1="0" y1="6" x2="6" y2="11" stroke="black"/><line x1="11" y1="6" x2="6" y2="11" stroke="black"/></svg>'
 })
+
+
