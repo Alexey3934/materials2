@@ -9,8 +9,8 @@ class MaterialsController < ApplicationController
     end   
 
     def create
-      # @material  = Material.new(material_params)
-      @material  = Material.new
+      @material  = Material.new(material_params)
+      # @material  = Material.new
 
       if @material.save
         redirect_to '/'
@@ -20,10 +20,11 @@ class MaterialsController < ApplicationController
       end
     end
     
-      # private
-      #   def material_params
-      #     params.require(:materials).permit(:description, :unit, :price_retail, :price_wholesale, :amount_wholesale, :category, :place, :company, :phone, :days_left)
-      #   end
+    private
+
+    def material_params
+      params.require(:material).permit(:description, :unit, :price_retail, :price_wholesale, :amount_wholesale, :category, :place, :company, :phone, :days_left)
+    end
     
     
          
