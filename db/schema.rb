@@ -10,32 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_23_083911) do
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
+ActiveRecord::Schema[7.0].define(version: 2022_05_13_075245) do
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.integer "parent_id"
-  end
-
   create_table "materials", force: :cascade do |t|
+    t.integer "category_id", null: false
     t.string "description"
     t.string "unit"
     t.integer "price_retail"
     t.integer "price_wholesale"
     t.integer "amount_wholesale"
-    t.string "category"
-    t.string "place"
     t.string "company"
     t.string "phone"
-    t.integer "days_left"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "place"
+    t.index ["category_id"], name: "index_materials_on_category_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "company", default: "", null: false
+    t.string "phone", null: false
+    t.string "workgroupe"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "materials", "categories"
 end

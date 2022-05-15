@@ -1,56 +1,92 @@
-<%= render "top"%>
+<div class='top_and_bottom'>
+    
+    <div id='logo'>
+        <h1>ЦеноСтрой</h1>
+        <p>Лучшие цены на</p>
+        <p>стройматериалы</p>
+    </div>
 
+    <div id='right'>
+        <p>ВХОД/РЕГИСТРАЦИЯ</p>
+    </div>
+
+</div>
 <div id="title">Добавление товара</div>
+ <h3 id="title_caterory" class="level1">Категории_товаров</h3>
 
+    <div class="flex justify">
 
+       
+        <div class="categories_for_materials bg-catalog margin width_20 pading">
+            
+        </div>
+       
+        <div>
+            <%# <%= form_with model: @material do |form|%>  
+            <%= form_with do |form| %>
 
-<%= form_with model: @material do |form| %>
+                <div>
+                    <%= form.label :"категория" %><br>
+                    <%= form.text_field :category_name , :readonly => true,  value: 'выберите значение категории'%>
+                </div>
 
+                <div>
+                    <%= form.label :"название" %><br>
+                    <%= form.text_field :description %>
+                    <%# <% @material.errors.full_messages_for(:description).each do |message| %> 
+                    <%# <div><%= message %> 
+                    <%# </div> %> 
+                    <%# <% end %>
+                </div>
 
-  <div>
-      <%= form.label :description %><br>
-      <%= form.text_field :description %>
-  </div>
-  <div>
-      <%= form.label :unit %><br>
-      <%= form.text_field :unit %>
-  </div>
-  <div>
-      <%= form.label :price_retail %><br>
-      <%= form.number_field  :price_retail %>
-  </div>
-  <div>
-      <%= form.label :price_wholesale %><br>
-      <%= form.number_field  :price_wholesale %>
-  </div>
-  <div>
-      <%= form.label :amount_wholesale %><br>
-      <%= form.number_field  :amount_wholesale %>
-  </div>
-  <div>
-      <%= form.label :category %><br>
-      <%= form.text_field :category %>
-  </div>
-  <div>
-      <%= form.label :place %><br>
-      <%= form.text_field :place %>
-  </div>
-  <div>
-      <%= form.label :company %><br>
-      <%= form.text_field :company %>
-  </div>
-  <div>
-      <%= form.label :phone %><br>
-      <%= form.text_field :phone %>
-  </div>  
-  <div>
-      <%= form.label :days_left %><br>
-      <%= form.number_field  :days_left %>
-  </div>
+                <div>
+                    <%= form.label :"единицы измерения" %><br>
+                    <%= form.text_field :unit %>
+                </div>
+                <div>
+                    <%= form.label :"цена розничная" %><br>
+                    <%= form.number_field  :price_retail %>
+                </div>
+                <div>
+                    <%= form.label :"цена оптовая" %><br>
+                    <%= form.number_field  :price_wholesale %>
+                </div>
+                <div>
+                    <%= form.label :"объём опта" %><br>
+                    <%= form.number_field  :amount_wholesale %>
+                </div>
+                       
 
+                
+                <div>
+                    <input id="hidden_input1" type='hidden' name="first_element_name">
+                </div>
+                <div>
+                    <input id="hidden_input3" type='hidden' name="second_element_name">
+                </div>
+                <div>
+                    <input id="hidden_input2" type='hidden' name="level_input">
+                </div>
+  
+                <div>
+                    <%= form.label :"регион" %><br>
+                    <%= form.select :place, ["Московская область", "Ленинградская область", "Крым"] %>
+                </div>
+                <div>
+                    <%= form.label :"компания" %><br>
+                    <%= form.text_field :company %>
+                </div>
+                <div>
+                    <%= form.label :"телефон для заказа" %><br>
+                    <%= form.text_field :phone %>
+                </div>  
+                <div>
+                  <%= form.submit %>
+                </div>
+            <% end %>
+        </div>
 
+    </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
+

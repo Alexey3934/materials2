@@ -4,7 +4,7 @@
     background-color: coral;
     justify-content: space-between;
 }
-#logo {font-size: 3vw;}
+/* #logo {font-size: 3vw;} */
 #right { 
     text-align: right;
 }
@@ -19,7 +19,7 @@ input {
 
 
 .content1 li {
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
 #wrap1 {

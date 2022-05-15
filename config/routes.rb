@@ -1,24 +1,32 @@
 Rails.application.routes.draw do
-  # resources :articles
-  
-  # get "/materials/new" , to: 'materials#new'
-  # post "/materials/new" , to: 'materials#create'
-  resources :materials
-  # root 'frame1#show'
-  
-  get "/"                                             ,  to: 'frame1#show1'
-  get "/qqq/:subcategory1"                            ,  to: 'frame1#show2'
-  get "/qqq/:subcategory1/:subcategory2"              ,  to: 'frame1#show3'
-  get "/qqq/:subcategory1/:subcategory2/:subcategory3",  to: 'frame1#show4'
+  devise_for :users, controllers: {
+    sessions: 'users/registrations'
+  }
 
-  get "/qqq"                                          ,  to: 'frame1#qqq'
+  # get "users/sign_out", to: "categories#index"
+
+
+  resources :materials
+
+  get 'categories/index', as: 'user_root'
+
+
+
+
+
+
+  root "categories#index"
+  get "/categories" , to: "categories#index"
+
+  post "/materials/new", to: "materials#create"
+
+
+  get "/qqq"                         , to: 'categories#qqq'
+  get "/qqq/get_categories"          , to: "categories#get_categories"
+  
+ 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  
   # Defines the root path route ("/")
   # root "articles#index"
 end
-
-
-
-

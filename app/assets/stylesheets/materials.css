@@ -2,3 +2,15 @@
     font-size: 3vw;
     text-align: center;
 }
+
+.flex {display: flex}
+/* .justify{justify-content: space-evenly;} */
+
+.level1 {margin-left: 2vw; background-color: aquamarine;}
+.level2 {margin-left: 4vw; background-color: cornsilk;}
+.level3 {margin-left: 6vw; background-color: cyan;}
+.bold {font-weight: bold;}
+.none {display: none;}
+
+
+#category_name {background-color: rgb(158, 158, 148);}

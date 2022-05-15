@@ -1,0 +1,123 @@
+<div class='top_and_bottom flex'>
+    
+    <div id='logo'>
+        <h1>ЦеноСтрой</h1>
+        <p>Лучшие цены на</p>
+        <p>стройматериалы</p>
+    </div>
+
+
+    <div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+    </div>
+
+
+
+    <div>
+        <% if user_signed_in? %>
+            <span>Здравствуйте, <%= current_user.company %></span>
+            <%= link_to 'Выйти', destroy_user_session_path,  data: {turbo_method: :delete} %> 
+        <% else %>
+            <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+        <% end %>
+    </div>
+
+    <div id='right'>
+        <button id="add_material">Добавить товар</button>
+        <%# <%= link_to 'Добавить товар', new_material_path %>
+    </div>
+
+</div>
+
+
+<select id="region">
+  <option value="Московская область"selected>Московская область</option>
+  <option value="Ленинградская область">Ленинградская область</option>
+  <option value="Крым">Крым</option>
+</select>
+
+
+<div class="flex">
+    <h3 id="title_caterory" class="level1">Категории_товаров</h3>
+    <input list="list" id="sort_input"  placeholder="поиск по названию товара">
+    <datalist id="list">
+    </datalist> 
+    <%= image_tag("krest.png", id:"krest")  %>
+</div>
+
+
+<div class="flex">
+    
+
+
+    <div class="categories_for_materials bg-catalog margin width_20 pading">
+    </div>
+
+    <table id='table' class="margin">
+        <tr class="bold">
+            <td class="td_top"><p>название</p>
+                <button id="but_name_to_up" class="sort"></button>
+                <button id="but_name_to_down" class="sort"></button>
+            </td> 
+            <td class="td_top">ед.изм.</td>
+            <td class="td_top"><p>цена розн.</p>
+                <button id="but_price_retail_to_up" class="sort"></button>
+                <button id="but_price_retail_to_down" class="sort"></button>
+            </td>
+            <td class="td_top"><p>цена опт.</p>
+                 <button id="but_price_wholesale_to_up" class="sort"></button>
+                <button id="but_price_wholesale_to_down" class="sort"></button>
+            </td>
+            <td class="td_top">объём опта</td>
+            <td class="td_top">компания</td>
+            <td class="td_top">тел для заказа</td>
+        </tr>
+    </table>
+
+</div>
+
+
+ <button id="add_material2" >Добавить товар с категорией</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class='top_and_bottom flex'>
+    <div> 
+        <p>орагнизация 1</p>
+        <p>орагнизация 2</p>
+    </div>
+    <div> 
+        <p>орагнизация 3</p>
+        <p>орагнизация 4</p>
+    </div>
+    <div> 
+        <p>орагнизация 5</p>
+        <p>орагнизация 6</p>
+    </div>
+    <div> 
+        <p>орагнизация 7</p>
+        <p>орагнизация 8</p>
+    </div>
+</div>
+
+
+
+<script>
+    
+    const add_material = document.querySelector("#add_material")
+    add_material.addEventListener("click", ()=> window.location.href = '/materials/new')
+    // $('button').trigger('click')
+</script>
