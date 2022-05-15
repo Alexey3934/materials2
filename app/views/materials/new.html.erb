@@ -23,7 +23,7 @@
        
         <div>
             <%# <%= form_with model: @material do |form|%>  
-            <%= form_with do |form| %>
+            <%= form_with model: Material.new do |form| %>
 
                 <div>
                     <%= form.label :"категория" %><br>
