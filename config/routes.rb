@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   root "categories#index"
   get "/categories" , to: "categories#index"
 
-  post "/materials/new", to: "materials#create"
+  # get "/materials/new", to: "materials#new"
+  # post "/materials/create", to: "materials#create"
 
 
   get "/qqq"                         , to: 'categories#qqq'

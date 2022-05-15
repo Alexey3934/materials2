@@ -54,7 +54,8 @@ class MaterialsController < ApplicationController
     
     
     if material.save
-      redirect_to "/", data: {turbo_method: :get}
+      # redirect_to "/", data: {turbo_method: :get}
+      redirect_to root_path
       #  data: { turbolinks: false }
       # data: { turbo: false }
       # , no_turbolink: true
